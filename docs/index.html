@@ -180,6 +180,63 @@
             stroke-width: 1;
         }
 
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-table th,
+        .user-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .user-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+
+        .user-table tr:hover {
+            background-color: #f7fafc;
+        }
+
+        .user-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .user-table tr:nth-child(even):hover {
+            background-color: #e2e8f0;
+        }
+
+        .rank-cell {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .name-cell {
+            font-weight: 600;
+            color: #4a5568;
+        }
+
+        .number-cell {
+            text-align: right;
+            font-family: monospace;
+        }
+
+        .date-cell {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
@@ -195,6 +252,15 @@
 
             #chart {
                 height: 400px;
+            }
+
+            .user-table {
+                font-size: 0.9rem;
+            }
+
+            .user-table th,
+            .user-table td {
+                padding: 8px 10px;
             }
         }
     </style>
@@ -241,6 +307,20 @@
         <div class="stats" id="stats">
             <div class="loading">📊 データを読み込み中...</div>
         </div>
+
+        <div class="chart-container">
+            <h2 style="margin-bottom: 20px; color: #4a5568;">📋 全ユーザー詳細一覧</h2>
+            <div class="table-controls" style="margin-bottom: 15px;">
+                <input type="text" id="tableSearch" placeholder="🔍 名前で検索..." style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 5px; margin-right: 10px;">
+                <select id="tablePeriod" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 5px;">
+                    <option value="six">📊 6ヶ月間データ</option>
+                    <option value="one">📈 7月データ</option>
+                </select>
+            </div>
+            <div id="userTable" style="overflow-x: auto;">
+                <div class="loading">📊 テーブルを生成中...</div>
+            </div>
+        </div>
     </div>
 
     <div class="tooltip" id="tooltip"></div>
@@ -268,6 +348,7 @@
                 console.log('データ読み込み完了:', userData);
                 initializeChart();
                 updateStats();
+                updateUserTable();
             } catch (error) {
                 console.error('データ読み込みエラー:', error);
                 document.getElementById('stats').innerHTML = '<div class="loading">❌ データ読み込みに失敗しました</div>';
@@ -488,6 +569,65 @@
             `;
         }
 
+        // ユーザーテーブル更新
+        function updateUserTable() {
+            const tablePeriod = document.getElementById('tablePeriod').value;
+            const searchTerm = document.getElementById('tableSearch').value.toLowerCase();
+            
+            const dataKey = tablePeriod === 'six' ? 'sixMonthData' : 'oneMonthData';
+            const data = userData[dataKey];
+            
+            // 検索フィルタ適用
+            const filteredUsers = data.filter(user => 
+                user.name.toLowerCase().includes(searchTerm)
+            );
+
+            // テーブル生成
+            generateUserTable(filteredUsers, tablePeriod);
+        }
+
+        function generateUserTable(users, period) {
+            const tableContainer = document.getElementById('userTable');
+            
+            const periodLabel = period === 'six' ? '6ヶ月間' : '7月';
+            
+            const tableHTML = `
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>順位</th>
+                            <th>ユーザー名</th>
+                            <th>登録日</th>
+                            <th>${periodLabel}利用回数</th>
+                            <th>${periodLabel}利用時間</th>
+                            <th>月平均回数</th>
+                            <th>月平均時間</th>
+                            <th>活動月数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${users.map((user, index) => `
+                            <tr>
+                                <td class="rank-cell">${index + 1}</td>
+                                <td class="name-cell">${user.name}</td>
+                                <td class="date-cell">${user.firstCheckIn || '-'}</td>
+                                <td class="number-cell">${user.totalVisits}</td>
+                                <td class="number-cell">${user.totalHours}h</td>
+                                <td class="number-cell">${user.monthlyVisits}回/月</td>
+                                <td class="number-cell">${user.monthlyHours}h/月</td>
+                                <td class="number-cell">${user.activeMonths}ヶ月</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+                <div style="margin-top: 15px; color: #718096; font-size: 0.9rem;">
+                    📊 表示: ${users.length}名 / 総ユーザー数: ${userData[period === 'six' ? 'sixMonthData' : 'oneMonthData'].length}名
+                </div>
+            `;
+            
+            tableContainer.innerHTML = tableHTML;
+        }
+
         // イベントリスナー設定
         document.addEventListener('DOMContentLoaded', () => {
             // 期間切り替え
@@ -513,6 +653,12 @@
                 document.getElementById('minVisitsValue').textContent = minVisitsSlider.value;
                 updateChart();
             });
+
+            // テーブル検索フィルタ
+            document.getElementById('tableSearch').addEventListener('input', updateUserTable);
+            
+            // テーブル期間切り替え
+            document.getElementById('tablePeriod').addEventListener('change', updateUserTable);
 
             // ウィンドウリサイズ
             window.addEventListener('resize', () => {

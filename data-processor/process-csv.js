@@ -128,8 +128,17 @@ async function processCSV() {
  */
 function calculateUserStats(records, months) {
     const userStats = {};
+    const userFirstCheckIn = {};
 
     console.log(`📈 ${months}ヶ月間のユーザー統計を計算中...`);
+
+    // 全レコードから各ユーザーの最初のチェックイン日を記録
+    records.forEach(record => {
+        const { customerName, checkinDate } = record;
+        if (!userFirstCheckIn[customerName] || checkinDate < userFirstCheckIn[customerName]) {
+            userFirstCheckIn[customerName] = checkinDate;
+        }
+    });
 
     // 期間内のレコードのみフィルタ
     const filteredRecords = records.filter(record => {
@@ -187,7 +196,8 @@ function calculateUserStats(records, months) {
             monthlyHours: Math.round(monthlyHours * 10) / 10,   // 小数点1桁
             activeMonths,
             totalVisits,
-            totalHours: Math.round(totalMinutes / 60 * 10) / 10
+            totalHours: Math.round(totalMinutes / 60 * 10) / 10,
+            firstCheckIn: userFirstCheckIn[userName].toISOString().split('T')[0] // YYYY-MM-DD形式
         });
     }
 
