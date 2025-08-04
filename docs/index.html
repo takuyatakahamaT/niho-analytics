@@ -209,7 +209,7 @@
         <div class="controls">
             <div class="period-toggle">
                 <button class="period-btn active" data-period="six">📊 直近6ヶ月</button>
-                <button class="period-btn" data-period="one">📈 直近1ヶ月</button>
+                <button class="period-btn" data-period="one">📈 2025年7月</button>
             </div>
 
             <div class="control-group">
@@ -466,7 +466,7 @@
             const totalTime = data.reduce((sum, user) => sum + user.totalHours, 0);
             const avgActiveMonths = data.reduce((sum, user) => sum + user.activeMonths, 0) / totalUsers;
             
-            const period = currentPeriod === 'six' ? '6ヶ月間' : '1ヶ月間';
+            const period = currentPeriod === 'six' ? '6ヶ月間' : '7月';
             
             document.getElementById('stats').innerHTML = `
                 <div class="stat-card">

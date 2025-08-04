@@ -26,11 +26,11 @@
     },
     {
       "name": "仲尾樹央",
-      "monthlyVisits": 7.5,
-      "monthlyHours": 24.8,
+      "monthlyVisits": 7.3,
+      "monthlyHours": 23.4,
       "activeMonths": 7,
-      "totalVisits": 45,
-      "totalHours": 148.6
+      "totalVisits": 44,
+      "totalHours": 140.6
     },
     {
       "name": "ギャレットコール",
@@ -819,92 +819,108 @@
   ],
   "oneMonthData": [
     {
-      "name": "中川めぐみ",
-      "monthlyVisits": 20,
-      "monthlyHours": 70.7,
-      "activeMonths": 2,
-      "totalVisits": 20,
-      "totalHours": 70.7
+      "name": "ギャレットコール",
+      "monthlyVisits": 17,
+      "monthlyHours": 29.7,
+      "activeMonths": 1,
+      "totalVisits": 17,
+      "totalHours": 29.7
     },
     {
-      "name": "ギャレットコール",
-      "monthlyVisits": 14,
-      "monthlyHours": 22.9,
+      "name": "中川めぐみ",
+      "monthlyVisits": 16,
+      "monthlyHours": 52.8,
       "activeMonths": 1,
-      "totalVisits": 14,
-      "totalHours": 22.9
+      "totalVisits": 16,
+      "totalHours": 52.8
     },
     {
       "name": "森聖子",
-      "monthlyVisits": 13,
-      "monthlyHours": 26.6,
+      "monthlyVisits": 14,
+      "monthlyHours": 34.1,
       "activeMonths": 1,
-      "totalVisits": 13,
-      "totalHours": 26.6
-    },
-    {
-      "name": "仲尾樹央",
-      "monthlyVisits": 13,
-      "monthlyHours": 40.2,
-      "activeMonths": 2,
-      "totalVisits": 13,
-      "totalHours": 40.2
-    },
-    {
-      "name": "日髙　博志",
-      "monthlyVisits": 11,
-      "monthlyHours": 21,
-      "activeMonths": 2,
-      "totalVisits": 11,
-      "totalHours": 21
+      "totalVisits": 14,
+      "totalHours": 34.1
     },
     {
       "name": "山本万優",
-      "monthlyVisits": 11,
-      "monthlyHours": 44.8,
+      "monthlyVisits": 13,
+      "monthlyHours": 64.7,
       "activeMonths": 1,
-      "totalVisits": 11,
-      "totalHours": 44.8
-    },
-    {
-      "name": "田儀明菜",
-      "monthlyVisits": 10,
-      "monthlyHours": 17.1,
-      "activeMonths": 2,
-      "totalVisits": 10,
-      "totalHours": 17.1
+      "totalVisits": 13,
+      "totalHours": 64.7
     },
     {
       "name": "仲村拓哉",
+      "monthlyVisits": 10,
+      "monthlyHours": 31.9,
+      "activeMonths": 1,
+      "totalVisits": 10,
+      "totalHours": 31.9
+    },
+    {
+      "name": "日髙　博志",
+      "monthlyVisits": 10,
+      "monthlyHours": 19.5,
+      "activeMonths": 1,
+      "totalVisits": 10,
+      "totalHours": 19.5
+    },
+    {
+      "name": "仲尾樹央",
+      "monthlyVisits": 10,
+      "monthlyHours": 23.8,
+      "activeMonths": 1,
+      "totalVisits": 10,
+      "totalHours": 23.8
+    },
+    {
+      "name": "木村 俊平",
       "monthlyVisits": 9,
-      "monthlyHours": 28.6,
+      "monthlyHours": 17.8,
       "activeMonths": 1,
       "totalVisits": 9,
-      "totalHours": 28.6
+      "totalHours": 17.8
+    },
+    {
+      "name": "田儀明菜",
+      "monthlyVisits": 8,
+      "monthlyHours": 13.1,
+      "activeMonths": 1,
+      "totalVisits": 8,
+      "totalHours": 13.1
     },
     {
       "name": "市川詩奈",
       "monthlyVisits": 6,
-      "monthlyHours": 9.3,
-      "activeMonths": 2,
-      "totalVisits": 6,
-      "totalHours": 9.3
-    },
-    {
-      "name": "木村 俊平",
-      "monthlyVisits": 6,
-      "monthlyHours": 14.1,
+      "monthlyHours": 10,
       "activeMonths": 1,
       "totalVisits": 6,
-      "totalHours": 14.1
+      "totalHours": 10
+    },
+    {
+      "name": "菊地伸也",
+      "monthlyVisits": 5,
+      "monthlyHours": 8.6,
+      "activeMonths": 1,
+      "totalVisits": 5,
+      "totalHours": 8.6
     },
     {
       "name": "内田早苗",
       "monthlyVisits": 5,
-      "monthlyHours": 6.9,
-      "activeMonths": 2,
+      "monthlyHours": 5.9,
+      "activeMonths": 1,
       "totalVisits": 5,
-      "totalHours": 6.9
+      "totalHours": 5.9
+    },
+    {
+      "name": "谷口優美",
+      "monthlyVisits": 5,
+      "monthlyHours": 5.8,
+      "activeMonths": 1,
+      "totalVisits": 5,
+      "totalHours": 5.8
     },
     {
       "name": "高浜 拓",
@@ -915,28 +931,36 @@
       "totalHours": 15.1
     },
     {
-      "name": "髙濵陽子",
-      "monthlyVisits": 5,
-      "monthlyHours": 9,
-      "activeMonths": 2,
-      "totalVisits": 5,
-      "totalHours": 9
+      "name": "加藤萌絵",
+      "monthlyVisits": 4,
+      "monthlyHours": 19.6,
+      "activeMonths": 1,
+      "totalVisits": 4,
+      "totalHours": 19.6
     },
     {
-      "name": "谷口優美",
-      "monthlyVisits": 5,
-      "monthlyHours": 3.8,
-      "activeMonths": 2,
-      "totalVisits": 5,
-      "totalHours": 3.8
+      "name": "大川美里",
+      "monthlyVisits": 4,
+      "monthlyHours": 7.9,
+      "activeMonths": 1,
+      "totalVisits": 4,
+      "totalHours": 7.9
     },
     {
-      "name": "浅田香代子",
-      "monthlyVisits": 5,
-      "monthlyHours": 7,
-      "activeMonths": 2,
-      "totalVisits": 5,
-      "totalHours": 7
+      "name": "堀越春香",
+      "monthlyVisits": 4,
+      "monthlyHours": 6.8,
+      "activeMonths": 1,
+      "totalVisits": 4,
+      "totalHours": 6.8
+    },
+    {
+      "name": "池ヶ谷貴徳",
+      "monthlyVisits": 4,
+      "monthlyHours": 1.4,
+      "activeMonths": 1,
+      "totalVisits": 4,
+      "totalHours": 1.4
     },
     {
       "name": "石原久佳",
@@ -947,12 +971,12 @@
       "totalHours": 11.6
     },
     {
-      "name": "菊地伸也",
+      "name": "髙濵陽子",
       "monthlyVisits": 4,
-      "monthlyHours": 4.5,
+      "monthlyHours": 7.9,
       "activeMonths": 1,
       "totalVisits": 4,
-      "totalHours": 4.5
+      "totalHours": 7.9
     },
     {
       "name": "上岡洋一郎",
@@ -971,12 +995,20 @@
       "totalHours": 11.2
     },
     {
-      "name": "三浦なつき",
-      "monthlyVisits": 4,
-      "monthlyHours": 24.6,
-      "activeMonths": 2,
-      "totalVisits": 4,
-      "totalHours": 24.6
+      "name": "野村佳申",
+      "monthlyVisits": 3,
+      "monthlyHours": 13.1,
+      "activeMonths": 1,
+      "totalVisits": 3,
+      "totalHours": 13.1
+    },
+    {
+      "name": "吉井　真理",
+      "monthlyVisits": 3,
+      "monthlyHours": 11.3,
+      "activeMonths": 1,
+      "totalVisits": 3,
+      "totalHours": 11.3
     },
     {
       "name": "黒田貴彦",
@@ -1003,14 +1035,6 @@
       "totalHours": 3.1
     },
     {
-      "name": "堀越春香",
-      "monthlyVisits": 3,
-      "monthlyHours": 4.8,
-      "activeMonths": 1,
-      "totalVisits": 3,
-      "totalHours": 4.8
-    },
-    {
       "name": "藤原亜也子",
       "monthlyVisits": 3,
       "monthlyHours": 5.8,
@@ -1027,12 +1051,44 @@
       "totalHours": 4.2
     },
     {
-      "name": "大川美里",
-      "monthlyVisits": 3,
-      "monthlyHours": 5.5,
+      "name": "とまそん",
+      "monthlyVisits": 2,
+      "monthlyHours": 4.6,
       "activeMonths": 1,
-      "totalVisits": 3,
-      "totalHours": 5.5
+      "totalVisits": 2,
+      "totalHours": 4.6
+    },
+    {
+      "name": "武井隼人",
+      "monthlyVisits": 2,
+      "monthlyHours": 3.1,
+      "activeMonths": 1,
+      "totalVisits": 2,
+      "totalHours": 3.1
+    },
+    {
+      "name": "三木康司",
+      "monthlyVisits": 2,
+      "monthlyHours": 3.7,
+      "activeMonths": 1,
+      "totalVisits": 2,
+      "totalHours": 3.7
+    },
+    {
+      "name": "稲田樹莉亜",
+      "monthlyVisits": 2,
+      "monthlyHours": 4.5,
+      "activeMonths": 1,
+      "totalVisits": 2,
+      "totalHours": 4.5
+    },
+    {
+      "name": "西原英里",
+      "monthlyVisits": 2,
+      "monthlyHours": 2.6,
+      "activeMonths": 1,
+      "totalVisits": 2,
+      "totalHours": 2.6
     },
     {
       "name": "山田和香",
@@ -1041,38 +1097,6 @@
       "activeMonths": 1,
       "totalVisits": 2,
       "totalHours": 7.5
-    },
-    {
-      "name": "吉井　真理",
-      "monthlyVisits": 2,
-      "monthlyHours": 9.3,
-      "activeMonths": 1,
-      "totalVisits": 2,
-      "totalHours": 9.3
-    },
-    {
-      "name": "野村佳申",
-      "monthlyVisits": 2,
-      "monthlyHours": 7,
-      "activeMonths": 1,
-      "totalVisits": 2,
-      "totalHours": 7
-    },
-    {
-      "name": "池ヶ谷貴徳",
-      "monthlyVisits": 2,
-      "monthlyHours": 0.3,
-      "activeMonths": 1,
-      "totalVisits": 2,
-      "totalHours": 0.3
-    },
-    {
-      "name": "加藤萌絵",
-      "monthlyVisits": 2,
-      "monthlyHours": 9.7,
-      "activeMonths": 1,
-      "totalVisits": 2,
-      "totalHours": 9.7
     },
     {
       "name": "永田拓人",
@@ -1099,12 +1123,20 @@
       "totalHours": 11.8
     },
     {
-      "name": "稲田樹莉亜",
+      "name": "浅田香代子",
       "monthlyVisits": 2,
       "monthlyHours": 4.3,
-      "activeMonths": 2,
+      "activeMonths": 1,
       "totalVisits": 2,
       "totalHours": 4.3
+    },
+    {
+      "name": "三浦なつき",
+      "monthlyVisits": 2,
+      "monthlyHours": 19,
+      "activeMonths": 1,
+      "totalVisits": 2,
+      "totalHours": 19
     },
     {
       "name": "高木早弥奈",
@@ -1123,28 +1155,12 @@
       "totalHours": 8.9
     },
     {
-      "name": "原田　昂輝",
-      "monthlyVisits": 2,
-      "monthlyHours": 2.2,
+      "name": "小原聡真",
+      "monthlyVisits": 1,
+      "monthlyHours": 0.3,
       "activeMonths": 1,
-      "totalVisits": 2,
-      "totalHours": 2.2
-    },
-    {
-      "name": "宍戸幹央",
-      "monthlyVisits": 2,
-      "monthlyHours": 0.2,
-      "activeMonths": 1,
-      "totalVisits": 2,
-      "totalHours": 0.2
-    },
-    {
-      "name": "中尾和貴",
-      "monthlyVisits": 2,
-      "monthlyHours": 3.5,
-      "activeMonths": 1,
-      "totalVisits": 2,
-      "totalHours": 3.5
+      "totalVisits": 1,
+      "totalHours": 0.3
     },
     {
       "name": "山本美瞳",
@@ -1177,14 +1193,6 @@
       "activeMonths": 1,
       "totalVisits": 1,
       "totalHours": 4.5
-    },
-    {
-      "name": "三木康司",
-      "monthlyVisits": 1,
-      "monthlyHours": 1.4,
-      "activeMonths": 1,
-      "totalVisits": 1,
-      "totalHours": 1.4
     },
     {
       "name": "大井ゆき",
@@ -1227,14 +1235,6 @@
       "totalHours": 1.4
     },
     {
-      "name": "武井隼人",
-      "monthlyVisits": 1,
-      "monthlyHours": 2.4,
-      "activeMonths": 1,
-      "totalVisits": 1,
-      "totalHours": 2.4
-    },
-    {
       "name": "小仁聡",
       "monthlyVisits": 1,
       "monthlyHours": 2.4,
@@ -1273,21 +1273,13 @@
       "activeMonths": 1,
       "totalVisits": 1,
       "totalHours": 1
-    },
-    {
-      "name": "山根志保",
-      "monthlyVisits": 1,
-      "monthlyHours": 1.1,
-      "activeMonths": 1,
-      "totalVisits": 1,
-      "totalHours": 1.1
     }
   ],
   "metadata": {
     "totalRecords": 1404,
     "uniqueUsers": 0,
-    "generatedAt": "2025-08-04T00:53:54.018Z",
+    "generatedAt": "2025-08-04T01:05:55.984Z",
     "periodSixMonths": "直近6ヶ月",
-    "periodOneMonth": "直近1ヶ月"
+    "periodOneMonth": "2025年7月のみ"
   }
 }

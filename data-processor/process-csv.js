@@ -43,6 +43,16 @@ function isWithinPeriod(date, months) {
 }
 
 /**
+ * 7月のデータのみかどうかを判定
+ * @param {Date} date
+ * @returns {boolean}
+ */
+function isJulyOnly(date) {
+    const yearMonth = getYearMonth(date);
+    return yearMonth === '2025-07';
+}
+
+/**
  * CSVデータを読み込んでユーザー統計を生成
  */
 async function processCSV() {
@@ -100,7 +110,7 @@ async function processCSV() {
                         uniqueUsers: Object.keys(users).length,
                         generatedAt: new Date().toISOString(),
                         periodSixMonths: '直近6ヶ月',
-                        periodOneMonth: '直近1ヶ月'
+                        periodOneMonth: '2025年7月のみ'
                     }
                 };
 
@@ -122,9 +132,15 @@ function calculateUserStats(records, months) {
     console.log(`📈 ${months}ヶ月間のユーザー統計を計算中...`);
 
     // 期間内のレコードのみフィルタ
-    const filteredRecords = records.filter(record => 
-        isWithinPeriod(record.checkinDate, months)
-    );
+    const filteredRecords = records.filter(record => {
+        if (months === 1) {
+            // 1ヶ月間の場合は7月のデータのみ
+            return isJulyOnly(record.checkinDate);
+        } else {
+            // 6ヶ月間の場合は従来通り
+            return isWithinPeriod(record.checkinDate, months);
+        }
+    });
 
     console.log(`📅 ${months}ヶ月間で${filteredRecords.length}件のレコードを対象`);
 
