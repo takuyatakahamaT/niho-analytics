@@ -370,7 +370,7 @@
             filteredData.forEach(d => {
                 const x = xScale(d.monthlyVisits);
                 const y = yScale(d.monthlyHours);
-                const radius = Math.sqrt(d.totalHours) * 1.5 + 3; // 総利用時間で円サイズ決定
+                const radius = 8; // 全ユーザー統一サイズ
                 
                 // 色決定
                 let color = '#667eea';
