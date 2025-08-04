@@ -41,14 +41,6 @@
       "totalHours": 104
     },
     {
-      "name": "中川めぐみ",
-      "monthlyVisits": 6.7,
-      "monthlyHours": 35.3,
-      "activeMonths": 4,
-      "totalVisits": 40,
-      "totalHours": 212
-    },
-    {
       "name": "浅田香代子",
       "monthlyVisits": 6.5,
       "monthlyHours": 11.8,
@@ -63,6 +55,14 @@
       "activeMonths": 7,
       "totalVisits": 37,
       "totalHours": 48.9
+    },
+    {
+      "name": "中川めぐみ",
+      "monthlyVisits": 6.2,
+      "monthlyHours": 22.4,
+      "activeMonths": 4,
+      "totalVisits": 37,
+      "totalHours": 134.2
     },
     {
       "name": "上岡洋一郎",
@@ -820,11 +820,11 @@
   "oneMonthData": [
     {
       "name": "中川めぐみ",
-      "monthlyVisits": 23,
-      "monthlyHours": 148.6,
+      "monthlyVisits": 20,
+      "monthlyHours": 70.7,
       "activeMonths": 2,
-      "totalVisits": 23,
-      "totalHours": 148.6
+      "totalVisits": 20,
+      "totalHours": 70.7
     },
     {
       "name": "ギャレットコール",
@@ -1284,9 +1284,9 @@
     }
   ],
   "metadata": {
-    "totalRecords": 1407,
+    "totalRecords": 1404,
     "uniqueUsers": 0,
-    "generatedAt": "2025-08-04T00:47:43.110Z",
+    "generatedAt": "2025-08-04T00:53:54.018Z",
     "periodSixMonths": "直近6ヶ月",
     "periodOneMonth": "直近1ヶ月"
   }
