@@ -615,33 +615,39 @@
 
         // ユーザーテーブル更新
         function updateUserTable() {
-            const tablePeriod = document.getElementById('tablePeriod').value;
-            const searchTerm = document.getElementById('tableSearch').value.toLowerCase();
-            
-            let dataKey;
-            if (tablePeriod === 'six') {
-                dataKey = 'sixMonthData';
-            } else if (tablePeriod === 'july') {
-                dataKey = 'julyData';
-            } else if (tablePeriod === 'august') {
-                dataKey = 'augustData';
-            }
-            
-            const data = userData[dataKey];
-            
-            // データが存在しない場合のエラーハンドリング
-            if (!data) {
-                console.error('テーブルデータが見つかりません:', tablePeriod, dataKey);
-                return;
-            }
-            
-            // 検索フィルタ適用
-            const filteredUsers = data.filter(user => 
-                user.name.toLowerCase().includes(searchTerm)
-            );
+            try {
+                const tablePeriod = document.getElementById('tablePeriod').value;
+                const searchTerm = document.getElementById('tableSearch').value.toLowerCase();
+                
+                let dataKey;
+                if (tablePeriod === 'six') {
+                    dataKey = 'sixMonthData';
+                } else if (tablePeriod === 'july') {
+                    dataKey = 'julyData';
+                } else if (tablePeriod === 'august') {
+                    dataKey = 'augustData';
+                }
+                
+                const data = userData[dataKey];
+                
+                // データが存在しない場合のエラーハンドリング
+                if (!data) {
+                    console.error('テーブルデータが見つかりません:', tablePeriod, dataKey);
+                    document.getElementById('userTable').innerHTML = '<div class="loading">❌ データが見つかりません</div>';
+                    return;
+                }
+                
+                // 検索フィルタ適用
+                const filteredUsers = data.filter(user => 
+                    user.name.toLowerCase().includes(searchTerm)
+                );
 
-            // テーブル生成
-            generateUserTable(filteredUsers, tablePeriod);
+                // テーブル生成
+                generateUserTable(filteredUsers, tablePeriod);
+            } catch (error) {
+                console.error('テーブル更新エラー:', error);
+                document.getElementById('userTable').innerHTML = `<div class="loading">❌ テーブル更新エラー: ${error.message}</div>`;
+            }
         }
 
         function generateUserTable(users, period) {
