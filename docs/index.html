@@ -346,14 +346,23 @@
         async function loadData() {
             try {
                 const response = await fetch('user-data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
                 userData = await response.json();
                 console.log('データ読み込み完了:', userData);
+                
+                // データ構造をチェック
+                if (!userData.sixMonthData || !userData.julyData || !userData.augustData) {
+                    throw new Error('データ構造が不正です');
+                }
+                
                 initializeChart();
                 updateStats();
                 updateUserTable();
             } catch (error) {
                 console.error('データ読み込みエラー:', error);
-                document.getElementById('stats').innerHTML = '<div class="loading">❌ データ読み込みに失敗しました</div>';
+                document.getElementById('stats').innerHTML = `<div class="loading">❌ データ読み込みに失敗しました: ${error.message}</div>`;
             }
         }
 
@@ -389,6 +398,12 @@
                 data = userData.julyData;
             } else if (currentPeriod === 'august') {
                 data = userData.augustData;
+            }
+            
+            // データが存在しない場合のエラーハンドリング
+            if (!data) {
+                console.error('データが見つかりません:', currentPeriod);
+                return;
             }
             
             // フィルタ適用
@@ -558,6 +573,12 @@
                 data = userData.augustData;
             }
             
+            // データが存在しない場合のエラーハンドリング
+            if (!data) {
+                console.error('統計データが見つかりません:', currentPeriod);
+                return;
+            }
+            
             const totalUsers = data.length;
             const topUser = data[0];
             const totalTime = data.reduce((sum, user) => sum + user.totalHours, 0);
@@ -605,7 +626,14 @@
             } else if (tablePeriod === 'august') {
                 dataKey = 'augustData';
             }
+            
             const data = userData[dataKey];
+            
+            // データが存在しない場合のエラーハンドリング
+            if (!data) {
+                console.error('テーブルデータが見つかりません:', tablePeriod, dataKey);
+                return;
+            }
             
             // 検索フィルタ適用
             const filteredUsers = data.filter(user => 
@@ -620,11 +648,11 @@
             const tableContainer = document.getElementById('userTable');
             
             let periodLabel;
-            if (tablePeriod === 'six') {
+            if (period === 'six') {
                 periodLabel = '6ヶ月間';
-            } else if (tablePeriod === 'july') {
+            } else if (period === 'july') {
                 periodLabel = '7月';
-            } else if (tablePeriod === 'august') {
+            } else if (period === 'august') {
                 periodLabel = '8月';
             }
             
