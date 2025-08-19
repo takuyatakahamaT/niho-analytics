@@ -1,0 +1,202 @@
+{
+  "current": {
+    "2025-08-01": {
+      "totalHours": 13.624166666666666,
+      "totalSessions": 9,
+      "uniqueUsers": 7
+    },
+    "2025-08-02": {
+      "totalHours": 20.705555555555556,
+      "totalSessions": 13,
+      "uniqueUsers": 10
+    },
+    "2025-08-03": {
+      "totalHours": 17.755555555555556,
+      "totalSessions": 6,
+      "uniqueUsers": 6
+    },
+    "2025-08-04": {
+      "totalHours": 22.27388888888889,
+      "totalSessions": 11,
+      "uniqueUsers": 8
+    },
+    "2025-08-05": {
+      "totalHours": 54.5338888888889,
+      "totalSessions": 18,
+      "uniqueUsers": 10
+    },
+    "2025-08-06": {
+      "totalHours": 19.840277777777782,
+      "totalSessions": 12,
+      "uniqueUsers": 10
+    },
+    "2025-08-07": {
+      "totalHours": 44.230000000000004,
+      "totalSessions": 21,
+      "uniqueUsers": 16
+    },
+    "2025-08-08": {
+      "totalHours": 0.8511111111111112,
+      "totalSessions": 1,
+      "uniqueUsers": 1
+    },
+    "2025-08-09": {
+      "totalHours": 15.149166666666668,
+      "totalSessions": 7,
+      "uniqueUsers": 5
+    },
+    "2025-08-11": {
+      "totalHours": 19.485555555555557,
+      "totalSessions": 9,
+      "uniqueUsers": 7
+    },
+    "2025-08-12": {
+      "totalHours": 15.979722222222222,
+      "totalSessions": 7,
+      "uniqueUsers": 6
+    },
+    "2025-08-13": {
+      "totalHours": 29.05027777777778,
+      "totalSessions": 10,
+      "uniqueUsers": 10
+    },
+    "2025-08-14": {
+      "totalHours": 15.7675,
+      "totalSessions": 4,
+      "uniqueUsers": 4
+    },
+    "2025-08-15": {
+      "totalHours": 29.29277777777778,
+      "totalSessions": 12,
+      "uniqueUsers": 9
+    },
+    "2025-08-16": {
+      "totalHours": 12.624166666666666,
+      "totalSessions": 4,
+      "uniqueUsers": 4
+    },
+    "2025-08-17": {
+      "totalHours": 28.720555555555553,
+      "totalSessions": 5,
+      "uniqueUsers": 5
+    },
+    "2025-08-18": {
+      "totalHours": 21.030833333333334,
+      "totalSessions": 10,
+      "uniqueUsers": 7
+    },
+    "2025-08-19": {
+      "totalHours": 2.6488888888888886,
+      "totalSessions": 3,
+      "uniqueUsers": 3
+    }
+  },
+  "previous": {
+    "2025-06-30": {
+      "totalHours": 3.8475,
+      "totalSessions": 2,
+      "uniqueUsers": 2
+    },
+    "2025-07-01": {
+      "totalHours": 34.76833333333333,
+      "totalSessions": 11,
+      "uniqueUsers": 10
+    },
+    "2025-07-02": {
+      "totalHours": 21.61861111111111,
+      "totalSessions": 9,
+      "uniqueUsers": 8
+    },
+    "2025-07-03": {
+      "totalHours": 20.073611111111113,
+      "totalSessions": 9,
+      "uniqueUsers": 7
+    },
+    "2025-07-04": {
+      "totalHours": 2.608888888888889,
+      "totalSessions": 1,
+      "uniqueUsers": 1
+    },
+    "2025-07-05": {
+      "totalHours": 17.1125,
+      "totalSessions": 7,
+      "uniqueUsers": 5
+    },
+    "2025-07-06": {
+      "totalHours": 19.91638888888889,
+      "totalSessions": 7,
+      "uniqueUsers": 7
+    },
+    "2025-07-07": {
+      "totalHours": 17.698055555555555,
+      "totalSessions": 7,
+      "uniqueUsers": 6
+    },
+    "2025-07-08": {
+      "totalHours": 4.549722222222222,
+      "totalSessions": 4,
+      "uniqueUsers": 4
+    },
+    "2025-07-09": {
+      "totalHours": 13.488055555555556,
+      "totalSessions": 11,
+      "uniqueUsers": 7
+    },
+    "2025-07-10": {
+      "totalHours": 18.490000000000002,
+      "totalSessions": 12,
+      "uniqueUsers": 11
+    },
+    "2025-07-11": {
+      "totalHours": 24.96277777777778,
+      "totalSessions": 11,
+      "uniqueUsers": 10
+    },
+    "2025-07-12": {
+      "totalHours": 9.821111111111112,
+      "totalSessions": 5,
+      "uniqueUsers": 5
+    },
+    "2025-07-13": {
+      "totalHours": 12.43138888888889,
+      "totalSessions": 7,
+      "uniqueUsers": 7
+    },
+    "2025-07-15": {
+      "totalHours": 7.504722222222223,
+      "totalSessions": 7,
+      "uniqueUsers": 4
+    },
+    "2025-07-16": {
+      "totalHours": 22.576666666666668,
+      "totalSessions": 9,
+      "uniqueUsers": 8
+    },
+    "2025-07-17": {
+      "totalHours": 14.954444444444446,
+      "totalSessions": 6,
+      "uniqueUsers": 6
+    },
+    "2025-07-18": {
+      "totalHours": 17.63222222222222,
+      "totalSessions": 6,
+      "uniqueUsers": 6
+    },
+    "2025-07-19": {
+      "totalHours": 2.444722222222222,
+      "totalSessions": 2,
+      "uniqueUsers": 2
+    },
+    "2025-07-20": {
+      "totalHours": 22.841111111111108,
+      "totalSessions": 7,
+      "uniqueUsers": 6
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-08-19T15:12:48.669Z",
+    "currentPeriod": "2025-08-01 to 2025-08-20",
+    "previousPeriod": "2025-07-01 to 2025-07-20",
+    "comparisonDays": 20
+  }
+}

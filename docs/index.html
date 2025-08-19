@@ -217,6 +217,80 @@
             background-color: #e2e8f0;
         }
 
+        /* リアルタイム比較用スタイル */
+        .realtime-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #4299e1;
+            transition: transform 0.2s ease;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .comparison-card h4 {
+            margin: 0 0 10px 0;
+            color: #2d3748;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .comparison-values {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .comparison-current {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .comparison-previous {
+            font-size: 1rem;
+            color: #718096;
+        }
+
+        .comparison-change {
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .comparison-change.positive {
+            background-color: #c6f6d5;
+            color: #22543d;
+        }
+
+        .comparison-change.negative {
+            background-color: #fed7d7;
+            color: #742a2a;
+        }
+
+        .comparison-change.neutral {
+            background-color: #e2e8f0;
+            color: #4a5568;
+        }
+
+        .hourly-chart-container canvas {
+            background: white;
+            border-radius: 8px;
+        }
+
         .rank-cell {
             font-weight: bold;
             color: #667eea;
@@ -277,6 +351,7 @@
                 <button class="period-btn active" data-period="six">📊 直近6ヶ月</button>
                 <button class="period-btn" data-period="july">📈 2025年7月</button>
                 <button class="period-btn" data-period="august">📅 2025年8月</button>
+                <button class="period-btn" data-period="realtime">⚡ リアルタイム比較</button>
             </div>
 
             <div class="control-group">
@@ -301,8 +376,40 @@
             </div>
         </div>
 
-        <div class="chart-container">
+        <div class="chart-container" id="mainChart">
             <svg id="chart"></svg>
+        </div>
+
+        <!-- リアルタイム比較ビュー -->
+        <div class="chart-container" id="realtimeView" style="display: none;">
+            <h2 style="margin-bottom: 20px; color: #4a5568;">⚡ 月別リアルタイム比較分析</h2>
+            
+            <!-- 比較統計 -->
+            <div class="realtime-stats" id="realtimeStats">
+                <div class="loading">📊 比較データを読み込み中...</div>
+            </div>
+            
+            <!-- 時間別在館者数グラフ -->
+            <div class="hourly-chart-container" style="margin: 30px 0;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">📈 時間別在館者数推移</h3>
+                <canvas id="hourlyChart" width="800" height="400" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 8px;"></canvas>
+            </div>
+            
+            <!-- 詳細データテーブル -->
+            <div class="hourly-table-container" style="margin-top: 30px;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">📊 時間別詳細データ</h3>
+                <div class="table-controls" style="margin-bottom: 15px;">
+                    <select id="hourlyTablePeriod" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 5px; margin-right: 10px;">
+                        <option value="current">当月データ</option>
+                        <option value="previous">前月データ</option>
+                        <option value="both">両月比較</option>
+                    </select>
+                    <input type="date" id="hourlyDateFilter" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 5px;">
+                </div>
+                <div id="hourlyTable" style="overflow-x: auto;">
+                    <div class="loading">📊 時間別データを生成中...</div>
+                </div>
+            </div>
         </div>
 
         <div class="stats" id="stats">
@@ -329,8 +436,10 @@
 
     <script>
         let userData = null;
+        let realtimeData = null;
         let currentPeriod = 'six';
         let filteredData = [];
+        let hourlyChart = null;
         
         // SVG設定
         const margin = { top: 40, right: 40, bottom: 80, left: 80 };
@@ -357,12 +466,31 @@
                     throw new Error('データ構造が不正です');
                 }
                 
+                // リアルタイムデータも読み込み
+                await loadRealtimeData();
+                
                 initializeChart();
                 updateStats();
                 updateUserTable();
             } catch (error) {
                 console.error('データ読み込みエラー:', error);
                 document.getElementById('stats').innerHTML = `<div class="loading">❌ データ読み込みに失敗しました: ${error.message}</div>`;
+            }
+        }
+
+        // リアルタイムデータ読み込み
+        async function loadRealtimeData() {
+            try {
+                const response = await fetch('realtime-analysis.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                realtimeData = await response.json();
+                console.log('リアルタイムデータ読み込み完了:', realtimeData);
+            } catch (error) {
+                console.warn('リアルタイムデータ読み込みエラー:', error);
+                // リアルタイムデータがない場合はスキップ
+                realtimeData = null;
             }
         }
 
@@ -385,6 +513,12 @@
 
         // チャート更新
         function updateChart() {
+            // リアルタイム表示の場合は別処理
+            if (currentPeriod === 'realtime') {
+                showRealtimeView();
+                return;
+            }
+
             const svg = document.getElementById('chart');
             const rect = svg.getBoundingClientRect();
             const width = rect.width - margin.left - margin.right;
@@ -739,6 +873,136 @@
             // データ読み込み開始
             loadData();
         });
+
+        // リアルタイム表示機能
+        function showRealtimeView() {
+            // メインチャートを非表示、リアルタイムビューを表示
+            document.getElementById('mainChart').style.display = 'none';
+            document.getElementById('realtimeView').style.display = 'block';
+            
+            if (!realtimeData) {
+                document.getElementById('realtimeStats').innerHTML = '<div class="loading">❌ リアルタイムデータがありません</div>';
+                return;
+            }
+            
+            // 比較統計を表示
+            displayRealtimeStats();
+        }
+
+        function hideRealtimeView() {
+            document.getElementById('mainChart').style.display = 'block';
+            document.getElementById('realtimeView').style.display = 'none';
+        }
+
+        // リアルタイム統計表示
+        function displayRealtimeStats() {
+            const { currentMonth, previousMonth, comparison, metadata } = realtimeData;
+            
+            const statsHTML = `
+                <div class="comparison-card">
+                    <h4>📊 比較期間</h4>
+                    <div style="font-size: 0.9rem; color: #4a5568;">
+                        <div>当月: ${metadata.currentPeriod}</div>
+                        <div>前月: ${metadata.previousPeriod}</div>
+                        <div>期間: ${metadata.comparisonDays}日間</div>
+                    </div>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4>👥 延べ利用人数</h4>
+                    <div class="comparison-values">
+                        <div>
+                            <div class="comparison-current">${currentMonth.totalStats.manHours}</div>
+                            <div class="comparison-previous">前月: ${previousMonth.totalStats.manHours}</div>
+                        </div>
+                        <div class="comparison-change ${getChangeClass(comparison.manHoursChange)}">
+                            ${comparison.manHoursChange}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4>⏰ 総利用時間</h4>
+                    <div class="comparison-values">
+                        <div>
+                            <div class="comparison-current">${currentMonth.totalStats.totalHours}h</div>
+                            <div class="comparison-previous">前月: ${previousMonth.totalStats.totalHours}h</div>
+                        </div>
+                        <div class="comparison-change ${getChangeClass(comparison.totalHoursChange)}">
+                            ${comparison.totalHoursChange}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4>📈 ピーク在館者数</h4>
+                    <div class="comparison-values">
+                        <div>
+                            <div class="comparison-current">${currentMonth.totalStats.peakOccupancy}人</div>
+                            <div class="comparison-previous">前月: ${previousMonth.totalStats.peakOccupancy}人</div>
+                        </div>
+                        <div class="comparison-change ${getChangeClass(comparison.peakOccupancyChange)}">
+                            ${comparison.peakOccupancyChange}人
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4>👤 平均在館者数</h4>
+                    <div class="comparison-values">
+                        <div>
+                            <div class="comparison-current">${currentMonth.totalStats.averageOccupancy}人</div>
+                            <div class="comparison-previous">前月: ${previousMonth.totalStats.averageOccupancy}人</div>
+                        </div>
+                        <div class="comparison-change ${getChangeClass(comparison.averageOccupancyChange)}">
+                            ${comparison.averageOccupancyChange}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-card">
+                    <h4>🏠 ユニークユーザー</h4>
+                    <div class="comparison-values">
+                        <div>
+                            <div class="comparison-current">${currentMonth.totalStats.uniqueUsers}人</div>
+                            <div class="comparison-previous">前月: ${previousMonth.totalStats.uniqueUsers}人</div>
+                        </div>
+                        <div class="comparison-change ${getChangeClass(comparison.uniqueUsersChange)}">
+                            ${comparison.uniqueUsersChange}人
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('realtimeStats').innerHTML = statsHTML;
+        }
+
+        // 変化率のクラスを取得
+        function getChangeClass(changeStr) {
+            if (changeStr.includes('+')) return 'positive';
+            if (changeStr.includes('-')) return 'negative';
+            return 'neutral';
+        }
+
+        // タブ切り替え処理を拡張
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.period-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentPeriod = btn.dataset.period;
+                    
+                    if (currentPeriod === 'realtime') {
+                        showRealtimeView();
+                    } else {
+                        hideRealtimeView();
+                        updateChart();
+                        updateStats();
+                    }
+                });
+            });
+        });
+
     </script>
 </body>
 </html>
