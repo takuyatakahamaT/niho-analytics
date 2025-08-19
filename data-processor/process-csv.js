@@ -53,6 +53,16 @@ function isJulyOnly(date) {
 }
 
 /**
+ * 8月のデータのみかどうかを判定
+ * @param {Date} date
+ * @returns {boolean}
+ */
+function isAugustOnly(date) {
+    const yearMonth = getYearMonth(date);
+    return yearMonth === '2025-08';
+}
+
+/**
  * CSVデータを読み込んでユーザー統計を生成
  */
 async function processCSV() {
@@ -100,17 +110,20 @@ async function processCSV() {
 
                 // 統計計算
                 const sixMonthStats = calculateUserStats(records, 6);
-                const oneMonthStats = calculateUserStats(records, 1);
+                const julyStats = calculateUserStats(records, 'july');
+                const augustStats = calculateUserStats(records, 'august');
 
                 const result = {
                     sixMonthData: sixMonthStats,
-                    oneMonthData: oneMonthStats,
+                    julyData: julyStats,
+                    augustData: augustStats,
                     metadata: {
                         totalRecords: records.length,
                         uniqueUsers: Object.keys(users).length,
                         generatedAt: new Date().toISOString(),
                         periodSixMonths: '直近6ヶ月',
-                        periodOneMonth: '2025年7月のみ'
+                        periodJuly: '2025年7月',
+                        periodAugust: '2025年8月'
                     }
                 };
 
@@ -123,14 +136,28 @@ async function processCSV() {
 /**
  * ユーザー統計を計算
  * @param {Array} records - 全レコード
- * @param {number} months - 対象期間（月数）
+ * @param {number|string} period - 対象期間（6なら6ヶ月間、'july'なら7月、'august'なら8月）
  * @returns {Array} ユーザー統計配列
  */
-function calculateUserStats(records, months) {
+function calculateUserStats(records, period) {
     const userStats = {};
     const userFirstCheckIn = {};
 
-    console.log(`📈 ${months}ヶ月間のユーザー統計を計算中...`);
+    let periodName;
+    let periodLength; // 月平均計算用の期間長
+
+    if (period === 'july') {
+        periodName = '7月';
+        periodLength = 1;
+    } else if (period === 'august') {
+        periodName = '8月';
+        periodLength = 1;
+    } else {
+        periodName = `${period}ヶ月間`;
+        periodLength = period;
+    }
+
+    console.log(`📈 ${periodName}のユーザー統計を計算中...`);
 
     // 全レコードから各ユーザーの最初のチェックイン日を記録
     records.forEach(record => {
@@ -142,16 +169,17 @@ function calculateUserStats(records, months) {
 
     // 期間内のレコードのみフィルタ
     const filteredRecords = records.filter(record => {
-        if (months === 1) {
-            // 1ヶ月間の場合は7月のデータのみ
+        if (period === 'july') {
             return isJulyOnly(record.checkinDate);
+        } else if (period === 'august') {
+            return isAugustOnly(record.checkinDate);
         } else {
             // 6ヶ月間の場合は従来通り
-            return isWithinPeriod(record.checkinDate, months);
+            return isWithinPeriod(record.checkinDate, period);
         }
     });
 
-    console.log(`📅 ${months}ヶ月間で${filteredRecords.length}件のレコードを対象`);
+    console.log(`📅 ${periodName}で${filteredRecords.length}件のレコードを対象`);
 
     // ユーザー×年月でグループ化
     filteredRecords.forEach(record => {
@@ -187,8 +215,8 @@ function calculateUserStats(records, months) {
         }
 
         // 月平均計算（活動していない月は0として扱う）
-        const monthlyVisits = totalVisits / months;
-        const monthlyHours = totalMinutes / (60 * months);
+        const monthlyVisits = totalVisits / periodLength;
+        const monthlyHours = totalMinutes / (60 * periodLength);
 
         result.push({
             name: userName,
@@ -226,12 +254,23 @@ async function main() {
         console.log('📄 分析結果をJSONに出力:', outputPath);
         console.log('📊 統計サマリー:');
         console.log(`   - 6ヶ月間ユーザー数: ${statistics.sixMonthData.length}名`);
-        console.log(`   - 1ヶ月間ユーザー数: ${statistics.oneMonthData.length}名`);
+        console.log(`   - 7月ユーザー数: ${statistics.julyData.length}名`);
+        console.log(`   - 8月ユーザー数: ${statistics.augustData.length}名`);
         console.log(`   - 総レコード数: ${statistics.metadata.totalRecords}件`);
         
         // トップ5ユーザーを表示
         console.log('\n🏆 6ヶ月間 トップ5ユーザー:');
         statistics.sixMonthData.slice(0, 5).forEach((user, index) => {
+            console.log(`   ${index + 1}. ${user.name}: ${user.monthlyVisits}回/月, ${user.monthlyHours}時間/月`);
+        });
+
+        console.log('\n🏆 7月 トップ5ユーザー:');
+        statistics.julyData.slice(0, 5).forEach((user, index) => {
+            console.log(`   ${index + 1}. ${user.name}: ${user.monthlyVisits}回/月, ${user.monthlyHours}時間/月`);
+        });
+
+        console.log('\n🏆 8月 トップ5ユーザー:');
+        statistics.augustData.slice(0, 5).forEach((user, index) => {
             console.log(`   ${index + 1}. ${user.name}: ${user.monthlyVisits}回/月, ${user.monthlyHours}時間/月`);
         });
 

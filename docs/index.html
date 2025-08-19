@@ -275,7 +275,8 @@
         <div class="controls">
             <div class="period-toggle">
                 <button class="period-btn active" data-period="six">📊 直近6ヶ月</button>
-                <button class="period-btn" data-period="one">📈 2025年7月</button>
+                <button class="period-btn" data-period="july">📈 2025年7月</button>
+                <button class="period-btn" data-period="august">📅 2025年8月</button>
             </div>
 
             <div class="control-group">
@@ -314,7 +315,8 @@
                 <input type="text" id="tableSearch" placeholder="🔍 名前で検索..." style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 5px; margin-right: 10px;">
                 <select id="tablePeriod" style="padding: 8px; border: 2px solid #e2e8f0; border-radius: 5px;">
                     <option value="six">📊 6ヶ月間データ</option>
-                    <option value="one">📈 7月データ</option>
+                    <option value="july">📈 7月データ</option>
+                    <option value="august">📅 8月データ</option>
                 </select>
             </div>
             <div id="userTable" style="overflow-x: auto;">
@@ -380,7 +382,14 @@
             const height = rect.height - margin.top - margin.bottom;
             
             // 現在の期間データを取得
-            const data = userData[currentPeriod === 'six' ? 'sixMonthData' : 'oneMonthData'];
+            let data;
+            if (currentPeriod === 'six') {
+                data = userData.sixMonthData;
+            } else if (currentPeriod === 'july') {
+                data = userData.julyData;
+            } else if (currentPeriod === 'august') {
+                data = userData.augustData;
+            }
             
             // フィルタ適用
             const searchTerm = document.getElementById('search').value.toLowerCase();
@@ -540,14 +549,28 @@
 
         // 統計更新
         function updateStats() {
-            const data = userData[currentPeriod === 'six' ? 'sixMonthData' : 'oneMonthData'];
+            let data;
+            if (currentPeriod === 'six') {
+                data = userData.sixMonthData;
+            } else if (currentPeriod === 'july') {
+                data = userData.julyData;
+            } else if (currentPeriod === 'august') {
+                data = userData.augustData;
+            }
             
             const totalUsers = data.length;
             const topUser = data[0];
             const totalTime = data.reduce((sum, user) => sum + user.totalHours, 0);
             const avgActiveMonths = data.reduce((sum, user) => sum + user.activeMonths, 0) / totalUsers;
             
-            const period = currentPeriod === 'six' ? '6ヶ月間' : '7月';
+            let period;
+            if (currentPeriod === 'six') {
+                period = '6ヶ月間';
+            } else if (currentPeriod === 'july') {
+                period = '7月';
+            } else if (currentPeriod === 'august') {
+                period = '8月';
+            }
             
             document.getElementById('stats').innerHTML = `
                 <div class="stat-card">
@@ -574,7 +597,14 @@
             const tablePeriod = document.getElementById('tablePeriod').value;
             const searchTerm = document.getElementById('tableSearch').value.toLowerCase();
             
-            const dataKey = tablePeriod === 'six' ? 'sixMonthData' : 'oneMonthData';
+            let dataKey;
+            if (tablePeriod === 'six') {
+                dataKey = 'sixMonthData';
+            } else if (tablePeriod === 'july') {
+                dataKey = 'julyData';
+            } else if (tablePeriod === 'august') {
+                dataKey = 'augustData';
+            }
             const data = userData[dataKey];
             
             // 検索フィルタ適用
@@ -589,7 +619,14 @@
         function generateUserTable(users, period) {
             const tableContainer = document.getElementById('userTable');
             
-            const periodLabel = period === 'six' ? '6ヶ月間' : '7月';
+            let periodLabel;
+            if (tablePeriod === 'six') {
+                periodLabel = '6ヶ月間';
+            } else if (tablePeriod === 'july') {
+                periodLabel = '7月';
+            } else if (tablePeriod === 'august') {
+                periodLabel = '8月';
+            }
             
             const tableHTML = `
                 <table class="user-table">
@@ -621,7 +658,7 @@
                     </tbody>
                 </table>
                 <div style="margin-top: 15px; color: #718096; font-size: 0.9rem;">
-                    📊 表示: ${users.length}名 / 総ユーザー数: ${userData[period === 'six' ? 'sixMonthData' : 'oneMonthData'].length}名
+                    📊 表示: ${users.length}名 / 総ユーザー数: ${userData[dataKey].length}名
                 </div>
             `;
             
