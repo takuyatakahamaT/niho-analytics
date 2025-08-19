@@ -643,14 +643,14 @@
                 );
 
                 // テーブル生成
-                generateUserTable(filteredUsers, tablePeriod);
+                generateUserTable(filteredUsers, tablePeriod, dataKey);
             } catch (error) {
                 console.error('テーブル更新エラー:', error);
                 document.getElementById('userTable').innerHTML = `<div class="loading">❌ テーブル更新エラー: ${error.message}</div>`;
             }
         }
 
-        function generateUserTable(users, period) {
+        function generateUserTable(users, period, dataKey) {
             const tableContainer = document.getElementById('userTable');
             
             let periodLabel;
