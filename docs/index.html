@@ -352,6 +352,7 @@
                 <button class="period-btn" data-period="july">📈 2025年7月</button>
                 <button class="period-btn" data-period="august">📅 2025年8月</button>
                 <button class="period-btn" data-period="realtime">⚡ リアルタイム比較</button>
+                <button class="period-btn" data-period="time-analysis">📈 時間帯・曜日分析</button>
             </div>
 
             <div class="control-group">
@@ -412,6 +413,61 @@
             </div>
         </div>
 
+        <!-- 時間帯・曜日分析ビュー -->
+        <div class="chart-container" id="timeAnalysisView" style="display: none;">
+            <h2 style="margin-bottom: 20px; color: #4a5568;">📈 時間帯・曜日分析</h2>
+            
+            <!-- 分析対象月選択 -->
+            <div class="time-analysis-controls" style="margin-bottom: 30px;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">分析対象月選択</h3>
+                <select id="timeAnalysisMonth" style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 8px; margin-right: 15px;">
+                    <option value="2025-08">2025年8月</option>
+                    <option value="2025-07">2025年7月</option>
+                    <option value="2025-06">2025年6月</option>
+                </select>
+                <button id="compareMonthsBtn" class="period-btn" style="background: #48bb78; color: white;">📊 複数月比較表示</button>
+            </div>
+            
+            <!-- 時間帯別統計 -->
+            <div class="time-slot-stats" style="margin-bottom: 30px;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">🕐 時間帯別平均利用人数</h3>
+                <div id="timeSlotStats">
+                    <div class="loading">📊 時間帯別データを読み込み中...</div>
+                </div>
+            </div>
+            
+            <!-- 曜日別統計 -->
+            <div class="day-of-week-stats" style="margin-bottom: 30px;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">📅 曜日別平均利用人数</h3>
+                <div id="dayOfWeekStats">
+                    <div class="loading">📊 曜日別データを読み込み中...</div>
+                </div>
+            </div>
+            
+            <!-- 複数月比較チャート -->
+            <div class="comparison-charts" id="comparisonCharts" style="display: none; margin-bottom: 30px;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">📈 複数月比較グラフ</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h4 style="color: #718096; margin-bottom: 10px;">時間帯別比較</h4>
+                        <canvas id="timeSlotChart" width="400" height="300" style="border: 1px solid #e2e8f0; border-radius: 8px;"></canvas>
+                    </div>
+                    <div>
+                        <h4 style="color: #718096; margin-bottom: 10px;">曜日別比較</h4>
+                        <canvas id="dayOfWeekChart" width="400" height="300" style="border: 1px solid #e2e8f0; border-radius: 8px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 詳細データテーブル -->
+            <div class="time-analysis-table" style="margin-top: 30px;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">📊 詳細データ</h3>
+                <div id="timeAnalysisTable" style="overflow-x: auto;">
+                    <div class="loading">📊 詳細データを読み込み中...</div>
+                </div>
+            </div>
+        </div>
+
         <div class="stats" id="stats">
             <div class="loading">📊 データを読み込み中...</div>
         </div>
@@ -437,9 +493,14 @@
     <script>
         let userData = null;
         let realtimeData = null;
+        let timeAnalysisData = null;
         let currentPeriod = 'six';
         let filteredData = [];
         let hourlyChart = null;
+        let timeSlotChart = null;
+        let dayOfWeekChart = null;
+        let currentAnalysisMonth = '2025-08';
+        let isComparisonMode = false;
         
         // SVG設定
         const margin = { top: 40, right: 40, bottom: 80, left: 80 };
@@ -469,6 +530,9 @@
                 // リアルタイムデータも読み込み
                 await loadRealtimeData();
                 
+                // 時間分析データも読み込み
+                await loadTimeAnalysisData();
+                
                 initializeChart();
                 updateStats();
                 updateUserTable();
@@ -494,6 +558,22 @@
             }
         }
 
+        // 時間分析データ読み込み
+        async function loadTimeAnalysisData() {
+            try {
+                const response = await fetch('time-analysis.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                timeAnalysisData = await response.json();
+                console.log('時間分析データ読み込み完了:', timeAnalysisData);
+            } catch (error) {
+                console.warn('時間分析データ読み込みエラー:', error);
+                // 時間分析データがない場合はスキップ
+                timeAnalysisData = null;
+            }
+        }
+
         // チャート初期化
         function initializeChart() {
             const svg = document.getElementById('chart');
@@ -516,6 +596,12 @@
             // リアルタイム表示の場合は別処理
             if (currentPeriod === 'realtime') {
                 showRealtimeView();
+                return;
+            }
+            
+            // 時間分析表示の場合は別処理
+            if (currentPeriod === 'time-analysis') {
+                showTimeAnalysisView();
                 return;
             }
 
@@ -698,8 +784,8 @@
 
         // 統計更新
         function updateStats() {
-            // リアルタイム表示の場合は統計更新をスキップ
-            if (currentPeriod === 'realtime') {
+            // リアルタイム表示または時間分析表示の場合は統計更新をスキップ
+            if (currentPeriod === 'realtime' || currentPeriod === 'time-analysis') {
                 document.getElementById('stats').style.display = 'none';
                 return;
             } else {
@@ -907,6 +993,36 @@
             document.getElementById('mainChart').style.display = 'block';
             document.getElementById('realtimeView').style.display = 'none';
         }
+        
+        // 時間分析ビュー表示
+        function showTimeAnalysisView() {
+            try {
+                document.getElementById('mainChart').style.display = 'none';
+                document.getElementById('realtimeView').style.display = 'none';
+                document.getElementById('timeAnalysisView').style.display = 'block';
+                
+                if (!timeAnalysisData) {
+                    throw new Error('時間分析データが読み込まれていません');
+                }
+                
+                displayTimeSlotStats();
+                displayDayOfWeekStats();
+                displayTimeAnalysisTable();
+                
+                console.log('時間分析ビュー表示完了');
+            } catch (error) {
+                console.error('時間分析ビュー表示エラー:', error);
+                document.getElementById('timeSlotStats').innerHTML = `<div class="loading">❌ 時間分析データの表示に失敗しました: ${error.message}</div>`;
+            }
+        }
+        
+        // 時間分析ビュー非表示
+        function hideTimeAnalysisView() {
+            document.getElementById('mainChart').style.display = 'block';
+            document.getElementById('timeAnalysisView').style.display = 'none';
+            document.getElementById('comparisonCharts').style.display = 'none';
+            isComparisonMode = false;
+        }
 
         // リアルタイム統計表示
         function displayRealtimeStats() {
@@ -1008,10 +1124,16 @@
                     
                     if (currentPeriod === 'realtime') {
                         showRealtimeView();
+                    } else if (currentPeriod === 'time-analysis') {
+                        hideRealtimeView();
+                        showTimeAnalysisView();
+                        updateUserTable();
                     } else {
                         hideRealtimeView();
+                        hideTimeAnalysisView();
                         updateChart();
                         updateStats();
+                        updateUserTable();
                     }
                 });
             });
@@ -1222,11 +1344,267 @@
             ctx.fillText('当月', padding + 100, 32);
         }
 
+        // 時間帯別統計表示
+        function displayTimeSlotStats() {
+            const monthData = timeAnalysisData.comparison[currentAnalysisMonth];
+            if (!monthData) {
+                document.getElementById('timeSlotStats').innerHTML = `<div class="loading">❌ ${currentAnalysisMonth}のデータが見つかりません</div>`;
+                return;
+            }
+            
+            const timeSlots = monthData.timeSlots.timeSlotAverages;
+            const timeSlotNames = {
+                morning: '朝（8-12時）',
+                afternoon: '昼（12-18時）',
+                evening: '夜（18-23時）'
+            };
+            
+            let html = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">';
+            
+            Object.entries(timeSlots).forEach(([slot, stats]) => {
+                html += `
+                    <div class="comparison-card" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                        <h4 style="color: #667eea; margin-bottom: 15px;">${timeSlotNames[slot]}</h4>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: #4a5568; margin-bottom: 5px;">
+                            ${stats.averageOccupancy}人/日
+                        </div>
+                        <div style="color: #718096; font-size: 0.9rem;">
+                            <div>総セッション: ${stats.totalSessions}回</div>
+                            <div>ユニークユーザー: ${stats.uniqueUsers}人</div>
+                            <div>総利用時間: ${stats.totalHours}時間</div>
+                            <div>平均滞在時間: ${stats.averageSessionLength}時間</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            document.getElementById('timeSlotStats').innerHTML = html;
+        }
+        
+        // 曜日別統計表示
+        function displayDayOfWeekStats() {
+            const monthData = timeAnalysisData.comparison[currentAnalysisMonth];
+            if (!monthData) {
+                document.getElementById('dayOfWeekStats').innerHTML = `<div class="loading">❌ ${currentAnalysisMonth}のデータが見つかりません</div>`;
+                return;
+            }
+            
+            const dayStats = monthData.dayOfWeek;
+            
+            let html = '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">';
+            
+            // 曜日順にソート（月曜日から日曜日）
+            const sortedDays = Object.entries(dayStats).sort((a, b) => {
+                const dayOrder = [1, 2, 3, 4, 5, 6, 0]; // 月火水木金土日
+                return dayOrder.indexOf(parseInt(a[0])) - dayOrder.indexOf(parseInt(b[0]));
+            });
+            
+            sortedDays.forEach(([dayIndex, stats]) => {
+                html += `
+                    <div class="comparison-card" style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center;">
+                        <h5 style="color: #667eea; margin-bottom: 10px;">${stats.dayName}</h5>
+                        <div style="font-size: 1.3rem; font-weight: bold; color: #4a5568; margin-bottom: 5px;">
+                            ${stats.averageOccupancy}人/日
+                        </div>
+                        <div style="color: #718096; font-size: 0.8rem;">
+                            <div>総セッション: ${stats.totalSessions}</div>
+                            <div>分析日数: ${stats.daysAnalyzed}日</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += '</div>';
+            document.getElementById('dayOfWeekStats').innerHTML = html;
+        }
+        
+        // 時間分析テーブル表示
+        function displayTimeAnalysisTable() {
+            if (isComparisonMode) {
+                displayComparisonTable();
+            } else {
+                displaySingleMonthTable();
+            }
+        }
+        
+        // 単月詳細テーブル表示
+        function displaySingleMonthTable() {
+            const monthData = timeAnalysisData.comparison[currentAnalysisMonth];
+            if (!monthData) {
+                document.getElementById('timeAnalysisTable').innerHTML = `<div class="loading">❌ ${currentAnalysisMonth}のデータが見つかりません</div>`;
+                return;
+            }
+            
+            let html = `
+                <h4 style="margin-bottom: 15px; color: #4a5568;">${currentAnalysisMonth} 詳細分析</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <div>
+                        <h5 style="color: #667eea; margin-bottom: 10px;">時間帯別詳細</h5>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr style="background: #f7fafc;">
+                                <th style="border: 1px solid #e2e8f0; padding: 8px;">時間帯</th>
+                                <th style="border: 1px solid #e2e8f0; padding: 8px;">平均利用人数</th>
+                                <th style="border: 1px solid #e2e8f0; padding: 8px;">総セッション</th>
+                                <th style="border: 1px solid #e2e8f0; padding: 8px;">ユニークユーザー</th>
+                            </tr>
+            `;
+            
+            const timeSlotNames = {
+                morning: '朝（8-12時）',
+                afternoon: '昼（12-18時）',
+                evening: '夜（18-23時）'
+            };
+            
+            Object.entries(monthData.timeSlots.timeSlotAverages).forEach(([slot, stats]) => {
+                html += `
+                    <tr>
+                        <td style="border: 1px solid #e2e8f0; padding: 8px;">${timeSlotNames[slot]}</td>
+                        <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">${stats.averageOccupancy}</td>
+                        <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">${stats.totalSessions}</td>
+                        <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">${stats.uniqueUsers}</td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                        </table>
+                    </div>
+                    <div>
+                        <h5 style="color: #667eea; margin-bottom: 10px;">曜日別詳細</h5>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr style="background: #f7fafc;">
+                                <th style="border: 1px solid #e2e8f0; padding: 8px;">曜日</th>
+                                <th style="border: 1px solid #e2e8f0; padding: 8px;">平均利用人数</th>
+                                <th style="border: 1px solid #e2e8f0; padding: 8px;">総セッション</th>
+                                <th style="border: 1px solid #e2e8f0; padding: 8px;">分析日数</th>
+                            </tr>
+            `;
+            
+            // 曜日順にソート
+            const sortedDays = Object.entries(monthData.dayOfWeek).sort((a, b) => {
+                const dayOrder = [1, 2, 3, 4, 5, 6, 0];
+                return dayOrder.indexOf(parseInt(a[0])) - dayOrder.indexOf(parseInt(b[0]));
+            });
+            
+            sortedDays.forEach(([dayIndex, stats]) => {
+                html += `
+                    <tr>
+                        <td style="border: 1px solid #e2e8f0; padding: 8px;">${stats.dayName}</td>
+                        <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">${stats.averageOccupancy}</td>
+                        <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">${stats.totalSessions}</td>
+                        <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">${stats.daysAnalyzed}</td>
+                    </tr>
+                `;
+            });
+            
+            html += `
+                        </table>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('timeAnalysisTable').innerHTML = html;
+        }
+        
+        // 複数月比較テーブル表示
+        function displayComparisonTable() {
+            const months = ['2025-08', '2025-07', '2025-06'];
+            
+            let html = `
+                <h4 style="margin-bottom: 15px; color: #4a5568;">複数月比較分析</h4>
+                <div style="margin-bottom: 30px;">
+                    <h5 style="color: #667eea; margin-bottom: 10px;">時間帯別比較</h5>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="background: #f7fafc;">
+                            <th style="border: 1px solid #e2e8f0; padding: 8px;">時間帯</th>
+            `;
+            
+            months.forEach(month => {
+                html += `<th style="border: 1px solid #e2e8f0; padding: 8px;">${month}</th>`;
+            });
+            html += '</tr>';
+            
+            const timeSlotNames = {
+                morning: '朝（8-12時）',
+                afternoon: '昼（12-18時）',
+                evening: '夜（18-23時）'
+            };
+            
+            Object.keys(timeSlotNames).forEach(slot => {
+                html += `<tr><td style="border: 1px solid #e2e8f0; padding: 8px;">${timeSlotNames[slot]}</td>`;
+                months.forEach(month => {
+                    const monthData = timeAnalysisData.comparison[month];
+                    const value = monthData?.timeSlots?.timeSlotAverages?.[slot]?.averageOccupancy || 'N/A';
+                    html += `<td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">${value}人/日</td>`;
+                });
+                html += '</tr>';
+            });
+            
+            html += `
+                    </table>
+                </div>
+                <div>
+                    <h5 style="color: #667eea; margin-bottom: 10px;">曜日別比較</h5>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="background: #f7fafc;">
+                            <th style="border: 1px solid #e2e8f0; padding: 8px;">曜日</th>
+            `;
+            
+            months.forEach(month => {
+                html += `<th style="border: 1px solid #e2e8f0; padding: 8px;">${month}</th>`;
+            });
+            html += '</tr>';
+            
+            const dayNames = ['月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日', '日曜日'];
+            const dayIndexes = [1, 2, 3, 4, 5, 6, 0];
+            
+            dayIndexes.forEach((dayIndex, i) => {
+                html += `<tr><td style="border: 1px solid #e2e8f0; padding: 8px;">${dayNames[i]}</td>`;
+                months.forEach(month => {
+                    const monthData = timeAnalysisData.comparison[month];
+                    const value = monthData?.dayOfWeek?.[dayIndex]?.averageOccupancy || 'N/A';
+                    html += `<td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center;">${value}人/日</td>`;
+                });
+                html += '</tr>';
+            });
+            
+            html += '</table></div>';
+            document.getElementById('timeAnalysisTable').innerHTML = html;
+        }
+
         // 時間別テーブル制御のイベントリスナー
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('hourlyTablePeriod').addEventListener('change', function() {
                 if (currentPeriod === 'realtime' && realtimeData) {
                     displayHourlyTable();
+                }
+            });
+            
+            // 時間分析コントロールのイベントリスナー
+            document.getElementById('timeAnalysisMonth').addEventListener('change', function() {
+                currentAnalysisMonth = this.value;
+                if (currentPeriod === 'time-analysis' && timeAnalysisData) {
+                    displayTimeSlotStats();
+                    displayDayOfWeekStats();
+                    displayTimeAnalysisTable();
+                }
+            });
+            
+            document.getElementById('compareMonthsBtn').addEventListener('click', function() {
+                isComparisonMode = !isComparisonMode;
+                if (isComparisonMode) {
+                    this.textContent = '📋 単月表示に戻る';
+                    this.style.background = '#e53e3e';
+                    document.getElementById('comparisonCharts').style.display = 'block';
+                } else {
+                    this.textContent = '📊 複数月比較表示';
+                    this.style.background = '#48bb78';
+                    document.getElementById('comparisonCharts').style.display = 'none';
+                }
+                
+                if (currentPeriod === 'time-analysis' && timeAnalysisData) {
+                    displayTimeAnalysisTable();
                 }
             });
         });

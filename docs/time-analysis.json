@@ -1,0 +1,708 @@
+{
+  "comparison": {
+    "2025-06": {
+      "timeSlots": {
+        "timeSlotAverages": {
+          "morning": {
+            "averageOccupancy": 2.2,
+            "totalSessions": 67,
+            "uniqueUsers": 33,
+            "totalHours": 178,
+            "averageSessionLength": 2.7
+          },
+          "afternoon": {
+            "averageOccupancy": 4.5,
+            "totalSessions": 135,
+            "uniqueUsers": 53,
+            "totalHours": 298,
+            "averageSessionLength": 2.2
+          },
+          "evening": {
+            "averageOccupancy": 1.6,
+            "totalSessions": 48,
+            "uniqueUsers": 23,
+            "totalHours": 96,
+            "averageSessionLength": 2
+          }
+        },
+        "dailyOccupancy": {
+          "2025-06-01": {
+            "morning": 0,
+            "afternoon": 9,
+            "evening": 1
+          },
+          "2025-06-02": {
+            "morning": 0,
+            "afternoon": 4,
+            "evening": 2
+          },
+          "2025-06-03": {
+            "morning": 0,
+            "afternoon": 1,
+            "evening": 1
+          },
+          "2025-06-04": {
+            "morning": 0,
+            "afternoon": 9,
+            "evening": 1
+          },
+          "2025-06-05": {
+            "morning": 0,
+            "afternoon": 2,
+            "evening": 0
+          },
+          "2025-06-06": {
+            "morning": 3,
+            "afternoon": 4,
+            "evening": 7
+          },
+          "2025-06-07": {
+            "morning": 2,
+            "afternoon": 7,
+            "evening": 0
+          },
+          "2025-06-08": {
+            "morning": 1,
+            "afternoon": 5,
+            "evening": 0
+          },
+          "2025-06-09": {
+            "morning": 4,
+            "afternoon": 6,
+            "evening": 1
+          },
+          "2025-06-10": {
+            "morning": 0,
+            "afternoon": 3,
+            "evening": 0
+          },
+          "2025-06-11": {
+            "morning": 5,
+            "afternoon": 12,
+            "evening": 2
+          },
+          "2025-06-12": {
+            "morning": 3,
+            "afternoon": 4,
+            "evening": 1
+          },
+          "2025-06-13": {
+            "morning": 4,
+            "afternoon": 5,
+            "evening": 5
+          },
+          "2025-06-14": {
+            "morning": 7,
+            "afternoon": 4,
+            "evening": 2
+          },
+          "2025-06-15": {
+            "morning": 3,
+            "afternoon": 2,
+            "evening": 1
+          },
+          "2025-06-16": {
+            "morning": 1,
+            "afternoon": 1,
+            "evening": 3
+          },
+          "2025-06-17": {
+            "morning": 2,
+            "afternoon": 1,
+            "evening": 0
+          },
+          "2025-06-18": {
+            "morning": 3,
+            "afternoon": 7,
+            "evening": 3
+          },
+          "2025-06-19": {
+            "morning": 1,
+            "afternoon": 4,
+            "evening": 3
+          },
+          "2025-06-20": {
+            "morning": 0,
+            "afternoon": 4,
+            "evening": 0
+          },
+          "2025-06-21": {
+            "morning": 5,
+            "afternoon": 0,
+            "evening": 3
+          },
+          "2025-06-22": {
+            "morning": 0,
+            "afternoon": 0,
+            "evening": 4
+          },
+          "2025-06-23": {
+            "morning": 3,
+            "afternoon": 2,
+            "evening": 2
+          },
+          "2025-06-24": {
+            "morning": 3,
+            "afternoon": 5,
+            "evening": 0
+          },
+          "2025-06-25": {
+            "morning": 1,
+            "afternoon": 10,
+            "evening": 0
+          },
+          "2025-06-26": {
+            "morning": 3,
+            "afternoon": 2,
+            "evening": 2
+          },
+          "2025-06-27": {
+            "morning": 3,
+            "afternoon": 2,
+            "evening": 0
+          },
+          "2025-06-28": {
+            "morning": 5,
+            "afternoon": 6,
+            "evening": 1
+          },
+          "2025-06-29": {
+            "morning": 1,
+            "afternoon": 7,
+            "evening": 2
+          },
+          "2025-06-30": {
+            "morning": 4,
+            "afternoon": 7,
+            "evening": 1
+          }
+        },
+        "daysAnalyzed": 30,
+        "totalRecords": 257
+      },
+      "dayOfWeek": {
+        "0": {
+          "dayName": "日曜日",
+          "averageOccupancy": 5.8,
+          "totalSessions": 35,
+          "uniqueUsers": 16,
+          "totalHours": 115,
+          "daysAnalyzed": 6,
+          "averageSessionLength": 3.3
+        },
+        "1": {
+          "dayName": "月曜日",
+          "averageOccupancy": 5.1,
+          "totalSessions": 46,
+          "uniqueUsers": 30,
+          "totalHours": 90.1,
+          "daysAnalyzed": 9,
+          "averageSessionLength": 2
+        },
+        "2": {
+          "dayName": "火曜日",
+          "averageOccupancy": 3,
+          "totalSessions": 18,
+          "uniqueUsers": 11,
+          "totalHours": 44.7,
+          "daysAnalyzed": 6,
+          "averageSessionLength": 2.5
+        },
+        "3": {
+          "dayName": "水曜日",
+          "averageOccupancy": 13.3,
+          "totalSessions": 53,
+          "uniqueUsers": 27,
+          "totalHours": 125.9,
+          "daysAnalyzed": 4,
+          "averageSessionLength": 2.4
+        },
+        "4": {
+          "dayName": "木曜日",
+          "averageOccupancy": 6,
+          "totalSessions": 24,
+          "uniqueUsers": 17,
+          "totalHours": 51.2,
+          "daysAnalyzed": 4,
+          "averageSessionLength": 2.1
+        },
+        "5": {
+          "dayName": "金曜日",
+          "averageOccupancy": 6.5,
+          "totalSessions": 39,
+          "uniqueUsers": 24,
+          "totalHours": 94.6,
+          "daysAnalyzed": 6,
+          "averageSessionLength": 2.4
+        },
+        "6": {
+          "dayName": "土曜日",
+          "averageOccupancy": 10.5,
+          "totalSessions": 42,
+          "uniqueUsers": 23,
+          "totalHours": 73.3,
+          "daysAnalyzed": 4,
+          "averageSessionLength": 1.7
+        }
+      },
+      "metadata": {
+        "month": "2025-06",
+        "totalRecords": 257
+      }
+    },
+    "2025-07": {
+      "timeSlots": {
+        "timeSlotAverages": {
+          "morning": {
+            "averageOccupancy": 1.7,
+            "totalSessions": 51,
+            "uniqueUsers": 17,
+            "totalHours": 138.9,
+            "averageSessionLength": 2.7
+          },
+          "afternoon": {
+            "averageOccupancy": 3.9,
+            "totalSessions": 116,
+            "uniqueUsers": 47,
+            "totalHours": 252.9,
+            "averageSessionLength": 2.2
+          },
+          "evening": {
+            "averageOccupancy": 1.5,
+            "totalSessions": 46,
+            "uniqueUsers": 19,
+            "totalHours": 105.1,
+            "averageSessionLength": 2.3
+          }
+        },
+        "dailyOccupancy": {
+          "2025-06-30": {
+            "morning": 2,
+            "afternoon": 0,
+            "evening": 0
+          },
+          "2025-07-01": {
+            "morning": 1,
+            "afternoon": 9,
+            "evening": 1
+          },
+          "2025-07-02": {
+            "morning": 2,
+            "afternoon": 4,
+            "evening": 3
+          },
+          "2025-07-03": {
+            "morning": 1,
+            "afternoon": 8,
+            "evening": 0
+          },
+          "2025-07-04": {
+            "morning": 1,
+            "afternoon": 0,
+            "evening": 0
+          },
+          "2025-07-05": {
+            "morning": 0,
+            "afternoon": 4,
+            "evening": 3
+          },
+          "2025-07-06": {
+            "morning": 2,
+            "afternoon": 1,
+            "evening": 2
+          },
+          "2025-07-07": {
+            "morning": 2,
+            "afternoon": 4,
+            "evening": 1
+          },
+          "2025-07-08": {
+            "morning": 2,
+            "afternoon": 1,
+            "evening": 1
+          },
+          "2025-07-09": {
+            "morning": 1,
+            "afternoon": 6,
+            "evening": 3
+          },
+          "2025-07-10": {
+            "morning": 3,
+            "afternoon": 9,
+            "evening": 0
+          },
+          "2025-07-11": {
+            "morning": 3,
+            "afternoon": 3,
+            "evening": 4
+          },
+          "2025-07-12": {
+            "morning": 2,
+            "afternoon": 2,
+            "evening": 1
+          },
+          "2025-07-13": {
+            "morning": 0,
+            "afternoon": 5,
+            "evening": 1
+          },
+          "2025-07-15": {
+            "morning": 2,
+            "afternoon": 5,
+            "evening": 0
+          },
+          "2025-07-16": {
+            "morning": 1,
+            "afternoon": 4,
+            "evening": 3
+          },
+          "2025-07-17": {
+            "morning": 2,
+            "afternoon": 0,
+            "evening": 4
+          },
+          "2025-07-18": {
+            "morning": 2,
+            "afternoon": 4,
+            "evening": 0
+          },
+          "2025-07-19": {
+            "morning": 1,
+            "afternoon": 1,
+            "evening": 0
+          },
+          "2025-07-20": {
+            "morning": 3,
+            "afternoon": 4,
+            "evening": 0
+          },
+          "2025-07-21": {
+            "morning": 3,
+            "afternoon": 4,
+            "evening": 1
+          },
+          "2025-07-23": {
+            "morning": 0,
+            "afternoon": 3,
+            "evening": 1
+          },
+          "2025-07-24": {
+            "morning": 1,
+            "afternoon": 4,
+            "evening": 3
+          },
+          "2025-07-25": {
+            "morning": 2,
+            "afternoon": 1,
+            "evening": 5
+          },
+          "2025-07-26": {
+            "morning": 3,
+            "afternoon": 2,
+            "evening": 1
+          },
+          "2025-07-27": {
+            "morning": 1,
+            "afternoon": 1,
+            "evening": 1
+          },
+          "2025-07-28": {
+            "morning": 3,
+            "afternoon": 7,
+            "evening": 1
+          },
+          "2025-07-29": {
+            "morning": 2,
+            "afternoon": 4,
+            "evening": 4
+          },
+          "2025-07-30": {
+            "morning": 0,
+            "afternoon": 3,
+            "evening": 1
+          },
+          "2025-07-31": {
+            "morning": 3,
+            "afternoon": 13,
+            "evening": 1
+          }
+        },
+        "daysAnalyzed": 30,
+        "totalRecords": 220
+      },
+      "dayOfWeek": {
+        "0": {
+          "dayName": "日曜日",
+          "averageOccupancy": 4.4,
+          "totalSessions": 22,
+          "uniqueUsers": 15,
+          "totalHours": 58.8,
+          "daysAnalyzed": 5,
+          "averageSessionLength": 2.7
+        },
+        "1": {
+          "dayName": "月曜日",
+          "averageOccupancy": 5.8,
+          "totalSessions": 29,
+          "uniqueUsers": 19,
+          "totalHours": 70.9,
+          "daysAnalyzed": 5,
+          "averageSessionLength": 2.4
+        },
+        "2": {
+          "dayName": "火曜日",
+          "averageOccupancy": 6.8,
+          "totalSessions": 34,
+          "uniqueUsers": 16,
+          "totalHours": 71.5,
+          "daysAnalyzed": 5,
+          "averageSessionLength": 2.1
+        },
+        "3": {
+          "dayName": "水曜日",
+          "averageOccupancy": 6.8,
+          "totalSessions": 34,
+          "uniqueUsers": 22,
+          "totalHours": 70.4,
+          "daysAnalyzed": 5,
+          "averageSessionLength": 2.1
+        },
+        "4": {
+          "dayName": "木曜日",
+          "averageOccupancy": 6.1,
+          "totalSessions": 55,
+          "uniqueUsers": 35,
+          "totalHours": 119.8,
+          "daysAnalyzed": 9,
+          "averageSessionLength": 2.2
+        },
+        "5": {
+          "dayName": "金曜日",
+          "averageOccupancy": 5.2,
+          "totalSessions": 26,
+          "uniqueUsers": 17,
+          "totalHours": 75.2,
+          "daysAnalyzed": 5,
+          "averageSessionLength": 2.9
+        },
+        "6": {
+          "dayName": "土曜日",
+          "averageOccupancy": 4,
+          "totalSessions": 20,
+          "uniqueUsers": 13,
+          "totalHours": 43.6,
+          "daysAnalyzed": 5,
+          "averageSessionLength": 2.2
+        }
+      },
+      "metadata": {
+        "month": "2025-07",
+        "totalRecords": 220
+      }
+    },
+    "2025-08": {
+      "timeSlots": {
+        "timeSlotAverages": {
+          "morning": {
+            "averageOccupancy": 2.4,
+            "totalSessions": 43,
+            "uniqueUsers": 23,
+            "totalHours": 99.1,
+            "averageSessionLength": 2.3
+          },
+          "afternoon": {
+            "averageOccupancy": 4.5,
+            "totalSessions": 81,
+            "uniqueUsers": 37,
+            "totalHours": 193.8,
+            "averageSessionLength": 2.4
+          },
+          "evening": {
+            "averageOccupancy": 2.1,
+            "totalSessions": 37,
+            "uniqueUsers": 21,
+            "totalHours": 90.3,
+            "averageSessionLength": 2.4
+          }
+        },
+        "dailyOccupancy": {
+          "2025-08-01": {
+            "morning": 3,
+            "afternoon": 0,
+            "evening": 6
+          },
+          "2025-08-02": {
+            "morning": 4,
+            "afternoon": 4,
+            "evening": 5
+          },
+          "2025-08-03": {
+            "morning": 1,
+            "afternoon": 5,
+            "evening": 0
+          },
+          "2025-08-04": {
+            "morning": 3,
+            "afternoon": 7,
+            "evening": 1
+          },
+          "2025-08-05": {
+            "morning": 6,
+            "afternoon": 8,
+            "evening": 3
+          },
+          "2025-08-06": {
+            "morning": 2,
+            "afternoon": 6,
+            "evening": 4
+          },
+          "2025-08-07": {
+            "morning": 5,
+            "afternoon": 9,
+            "evening": 7
+          },
+          "2025-08-08": {
+            "morning": 0,
+            "afternoon": 0,
+            "evening": 1
+          },
+          "2025-08-09": {
+            "morning": 1,
+            "afternoon": 6,
+            "evening": 0
+          },
+          "2025-08-11": {
+            "morning": 1,
+            "afternoon": 7,
+            "evening": 1
+          },
+          "2025-08-12": {
+            "morning": 3,
+            "afternoon": 2,
+            "evening": 2
+          },
+          "2025-08-13": {
+            "morning": 2,
+            "afternoon": 5,
+            "evening": 3
+          },
+          "2025-08-14": {
+            "morning": 1,
+            "afternoon": 2,
+            "evening": 1
+          },
+          "2025-08-15": {
+            "morning": 4,
+            "afternoon": 8,
+            "evening": 0
+          },
+          "2025-08-16": {
+            "morning": 0,
+            "afternoon": 4,
+            "evening": 0
+          },
+          "2025-08-17": {
+            "morning": 2,
+            "afternoon": 1,
+            "evening": 2
+          },
+          "2025-08-18": {
+            "morning": 3,
+            "afternoon": 6,
+            "evening": 1
+          },
+          "2025-08-19": {
+            "morning": 2,
+            "afternoon": 1,
+            "evening": 0
+          }
+        },
+        "daysAnalyzed": 18,
+        "totalRecords": 162
+      },
+      "dayOfWeek": {
+        "0": {
+          "dayName": "日曜日",
+          "averageOccupancy": 4.5,
+          "totalSessions": 9,
+          "uniqueUsers": 7,
+          "totalHours": 45.5,
+          "daysAnalyzed": 2,
+          "averageSessionLength": 5.1
+        },
+        "1": {
+          "dayName": "月曜日",
+          "averageOccupancy": 7.8,
+          "totalSessions": 31,
+          "uniqueUsers": 19,
+          "totalHours": 63.2,
+          "daysAnalyzed": 4,
+          "averageSessionLength": 2
+        },
+        "2": {
+          "dayName": "火曜日",
+          "averageOccupancy": 6.5,
+          "totalSessions": 26,
+          "uniqueUsers": 14,
+          "totalHours": 70,
+          "daysAnalyzed": 4,
+          "averageSessionLength": 2.7
+        },
+        "3": {
+          "dayName": "水曜日",
+          "averageOccupancy": 6.3,
+          "totalSessions": 25,
+          "uniqueUsers": 18,
+          "totalHours": 52.7,
+          "daysAnalyzed": 4,
+          "averageSessionLength": 2.1
+        },
+        "4": {
+          "dayName": "木曜日",
+          "averageOccupancy": 12.5,
+          "totalSessions": 25,
+          "uniqueUsers": 19,
+          "totalHours": 60,
+          "daysAnalyzed": 2,
+          "averageSessionLength": 2.4
+        },
+        "5": {
+          "dayName": "金曜日",
+          "averageOccupancy": 7,
+          "totalSessions": 21,
+          "uniqueUsers": 16,
+          "totalHours": 42.6,
+          "daysAnalyzed": 3,
+          "averageSessionLength": 2
+        },
+        "6": {
+          "dayName": "土曜日",
+          "averageOccupancy": 6.3,
+          "totalSessions": 25,
+          "uniqueUsers": 16,
+          "totalHours": 49.6,
+          "daysAnalyzed": 4,
+          "averageSessionLength": 2
+        }
+      },
+      "metadata": {
+        "month": "2025-08",
+        "totalRecords": 162
+      }
+    }
+  },
+  "metadata": {
+    "generatedAt": "2025-08-19T16:57:57.543Z",
+    "totalRecords": 1535,
+    "analysisMonths": [
+      "2025-06",
+      "2025-07",
+      "2025-08"
+    ],
+    "timeSlots": {
+      "morning": "朝（8-12時）",
+      "afternoon": "昼（12-18時）",
+      "evening": "夜（18-23時）"
+    }
+  }
+}
