@@ -887,6 +887,12 @@
             
             // 比較統計を表示
             displayRealtimeStats();
+            
+            // 時間別データテーブルを表示
+            displayHourlyTable();
+            
+            // 時間別グラフを表示（簡易版）
+            displayHourlyChart();
         }
 
         function hideRealtimeView() {
@@ -1000,6 +1006,220 @@
                         updateStats();
                     }
                 });
+            });
+        });
+
+        // 時間別データテーブル表示
+        function displayHourlyTable() {
+            const period = document.getElementById('hourlyTablePeriod').value;
+            let data;
+            
+            if (period === 'current') {
+                data = realtimeData.currentMonth.hourlyOccupancy;
+            } else if (period === 'previous') {
+                data = realtimeData.previousMonth.hourlyOccupancy;
+            } else {
+                // 両月比較の場合は簡易版
+                displayBothMonthsTable();
+                return;
+            }
+            
+            // 時間別データをテーブル形式で表示
+            const sortedEntries = Object.entries(data).sort(([a], [b]) => a.localeCompare(b));
+            
+            const tableHTML = `
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>日時</th>
+                            <th>在館者数</th>
+                            <th>総利用時間(分)</th>
+                            <th>利用者詳細</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${sortedEntries.map(([dateHour, hourData]) => `
+                            <tr>
+                                <td>${dateHour.replace('-', '年').replace('-', '月').replace('-', '日')}時</td>
+                                <td class="number-cell">${hourData.count}人</td>
+                                <td class="number-cell">${Math.round(hourData.totalMinutes)}分</td>
+                                <td>${hourData.users.map(u => `${u.name}(${Math.round(u.duration)}分)`).join(', ')}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+                <div style="margin-top: 15px; color: #718096; font-size: 0.9rem;">
+                    📊 表示: ${sortedEntries.length}時間スロット
+                </div>
+            `;
+            
+            document.getElementById('hourlyTable').innerHTML = tableHTML;
+        }
+
+        // 両月比較テーブル表示
+        function displayBothMonthsTable() {
+            const currentData = realtimeData.currentMonth.hourlyOccupancy;
+            const previousData = realtimeData.previousMonth.hourlyOccupancy;
+            
+            // 共通する時間スロットを取得
+            const allHours = new Set([...Object.keys(currentData), ...Object.keys(previousData)]);
+            const sortedHours = Array.from(allHours).sort();
+            
+            const tableHTML = `
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">日時</th>
+                            <th colspan="2">当月(8月)</th>
+                            <th colspan="2">前月(7月)</th>
+                        </tr>
+                        <tr>
+                            <th>在館者数</th>
+                            <th>利用時間</th>
+                            <th>在館者数</th>
+                            <th>利用時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${sortedHours.slice(0, 50).map(hour => {
+                            const current = currentData[hour] || { count: 0, totalMinutes: 0 };
+                            const previous = previousData[hour] || { count: 0, totalMinutes: 0 };
+                            
+                            return `
+                                <tr>
+                                    <td>${hour.replace(/(\d{4})-(\d{1,2})-(\d{1,2})-(\d{1,2})/, '$1年$2月$3日$4時')}</td>
+                                    <td class="number-cell">${current.count}人</td>
+                                    <td class="number-cell">${Math.round(current.totalMinutes)}分</td>
+                                    <td class="number-cell">${previous.count}人</td>
+                                    <td class="number-cell">${Math.round(previous.totalMinutes)}分</td>
+                                </tr>
+                            `;
+                        }).join('')}
+                    </tbody>
+                </table>
+                <div style="margin-top: 15px; color: #718096; font-size: 0.9rem;">
+                    📊 表示: 上位50時間スロット（大量データのため制限）
+                </div>
+            `;
+            
+            document.getElementById('hourlyTable').innerHTML = tableHTML;
+        }
+
+        // 時間別グラフ表示（簡易版）
+        function displayHourlyChart() {
+            const canvas = document.getElementById('hourlyChart');
+            if (!canvas.getContext) {
+                document.querySelector('.hourly-chart-container').innerHTML = '<p>❌ グラフ表示には対応ブラウザが必要です</p>';
+                return;
+            }
+            
+            const ctx = canvas.getContext('2d');
+            
+            // キャンバスをクリア
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // 簡易的なチャート描画
+            drawSimpleHourlyChart(ctx, canvas);
+        }
+
+        // 簡易チャート描画
+        function drawSimpleHourlyChart(ctx, canvas) {
+            const currentData = realtimeData.currentMonth.hourlyOccupancy;
+            const previousData = realtimeData.previousMonth.hourlyOccupancy;
+            
+            // データを時間ごとに集計（0-23時）
+            const currentHourly = Array(24).fill(0);
+            const previousHourly = Array(24).fill(0);
+            
+            Object.entries(currentData).forEach(([dateHour, data]) => {
+                const hour = parseInt(dateHour.split('-')[3]);
+                currentHourly[hour] += data.count;
+            });
+            
+            Object.entries(previousData).forEach(([dateHour, data]) => {
+                const hour = parseInt(dateHour.split('-')[3]);
+                previousHourly[hour] += data.count;
+            });
+            
+            // チャートの描画領域設定
+            const padding = 60;
+            const chartWidth = canvas.width - padding * 2;
+            const chartHeight = canvas.height - padding * 2;
+            
+            // スケール設定
+            const maxValue = Math.max(...currentHourly, ...previousHourly);
+            const scale = chartHeight / (maxValue || 1);
+            
+            // 背景
+            ctx.fillStyle = '#f8f9fa';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // グリッド線
+            ctx.strokeStyle = '#e2e8f0';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 24; i += 6) {
+                const x = padding + (i / 24) * chartWidth;
+                ctx.beginPath();
+                ctx.moveTo(x, padding);
+                ctx.lineTo(x, canvas.height - padding);
+                ctx.stroke();
+            }
+            
+            // データ描画
+            const barWidth = chartWidth / 24;
+            
+            // 前月データ（薄い色）
+            ctx.fillStyle = '#cbd5e0';
+            previousHourly.forEach((value, hour) => {
+                const x = padding + hour * barWidth;
+                const height = value * scale;
+                const y = canvas.height - padding - height;
+                ctx.fillRect(x, y, barWidth * 0.4, height);
+            });
+            
+            // 当月データ（濃い色）
+            ctx.fillStyle = '#4299e1';
+            currentHourly.forEach((value, hour) => {
+                const x = padding + hour * barWidth + barWidth * 0.4;
+                const height = value * scale;
+                const y = canvas.height - padding - height;
+                ctx.fillRect(x, y, barWidth * 0.4, height);
+            });
+            
+            // 軸ラベル
+            ctx.fillStyle = '#4a5568';
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            
+            // X軸（時間）
+            for (let i = 0; i < 24; i += 6) {
+                const x = padding + (i / 24) * chartWidth;
+                ctx.fillText(`${i}時`, x, canvas.height - 10);
+            }
+            
+            // Y軸ラベル
+            ctx.textAlign = 'right';
+            ctx.fillText('在館者数', padding - 10, padding - 10);
+            
+            // 凡例
+            ctx.textAlign = 'left';
+            ctx.fillStyle = '#cbd5e0';
+            ctx.fillRect(padding, 20, 15, 15);
+            ctx.fillStyle = '#4a5568';
+            ctx.fillText('前月', padding + 20, 32);
+            
+            ctx.fillStyle = '#4299e1';
+            ctx.fillRect(padding + 80, 20, 15, 15);
+            ctx.fillStyle = '#4a5568';
+            ctx.fillText('当月', padding + 100, 32);
+        }
+
+        // 時間別テーブル制御のイベントリスナー
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('hourlyTablePeriod').addEventListener('change', function() {
+                if (currentPeriod === 'realtime' && realtimeData) {
+                    displayHourlyTable();
+                }
             });
         });
 
