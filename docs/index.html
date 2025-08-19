@@ -698,6 +698,14 @@
 
         // 統計更新
         function updateStats() {
+            // リアルタイム表示の場合は統計更新をスキップ
+            if (currentPeriod === 'realtime') {
+                document.getElementById('stats').style.display = 'none';
+                return;
+            } else {
+                document.getElementById('stats').style.display = 'block';
+            }
+
             let data;
             if (currentPeriod === 'six') {
                 data = userData.sixMonthData;
