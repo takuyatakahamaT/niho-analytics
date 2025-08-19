@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2025-08-19T15:12:48.669Z",
+    "generatedAt": "2025-08-19T15:23:18.928Z",
     "currentPeriod": "2025-08-01 to 2025-08-20",
     "previousPeriod": "2025-07-01 to 2025-07-20",
     "comparisonDays": 20
@@ -13596,7 +13596,7 @@
     ],
     "totalStats": {
       "totalHours": 383.6,
-      "manHours": 383.6,
+      "manHours": 163,
       "uniqueUsers": 55,
       "totalSessions": 163,
       "peakOccupancy": 10,
@@ -21381,7 +21381,7 @@
     ],
     "totalStats": {
       "totalHours": 309.3,
-      "manHours": 309.3,
+      "manHours": 140,
       "uniqueUsers": 48,
       "totalSessions": 140,
       "peakOccupancy": 9,
@@ -21391,7 +21391,7 @@
   },
   "comparison": {
     "totalHoursChange": "+24%",
-    "manHoursChange": "+24%",
+    "manHoursChange": "+16.4%",
     "uniqueUsersChange": "+7",
     "totalSessionsChange": "+23",
     "peakOccupancyChange": "+1",

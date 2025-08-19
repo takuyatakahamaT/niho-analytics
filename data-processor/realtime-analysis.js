@@ -226,8 +226,9 @@ function calculateTotalStats(monthData, records) {
     // 総利用時間
     const totalHours = Object.values(dailyStats).reduce((sum, day) => sum + day.totalHours, 0);
     
-    // 延べ利用人数 (= 総利用時間)
-    const manHours = totalHours;
+    // 延べ利用人数 (総利用セッション数)
+    // 1回の利用 = 1人として計算（より直感的）
+    const manHours = records.length;
     
     // ユニークユーザー数
     const uniqueUsers = new Set(records.map(r => r['顧客名'])).size;
