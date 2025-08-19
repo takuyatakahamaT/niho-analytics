@@ -2,165 +2,192 @@
   "sixMonthData": [
     {
       "name": "森聖子",
-      "monthlyVisits": 11.3,
-      "monthlyHours": 27.8,
-      "activeMonths": 6,
-      "totalVisits": 68,
-      "totalHours": 166.7,
+      "monthlyVisits": 11.7,
+      "monthlyHours": 27.7,
+      "activeMonths": 7,
+      "totalVisits": 70,
+      "totalHours": 166,
       "firstCheckIn": "2024-12-26"
     },
     {
       "name": "仲村拓哉",
-      "monthlyVisits": 8.2,
-      "monthlyHours": 29.5,
-      "activeMonths": 6,
-      "totalVisits": 49,
-      "totalHours": 177,
+      "monthlyVisits": 8.3,
+      "monthlyHours": 31.3,
+      "activeMonths": 7,
+      "totalVisits": 50,
+      "totalHours": 187.6,
       "firstCheckIn": "2024-07-18"
+    },
+    {
+      "name": "中川めぐみ",
+      "monthlyVisits": 8.3,
+      "monthlyHours": 29.8,
+      "activeMonths": 4,
+      "totalVisits": 50,
+      "totalHours": 179,
+      "firstCheckIn": "2025-05-21"
     },
     {
       "name": "山本万優",
       "monthlyVisits": 8,
-      "monthlyHours": 28.9,
-      "activeMonths": 6,
+      "monthlyHours": 26.3,
+      "activeMonths": 7,
       "totalVisits": 48,
-      "totalHours": 173.5,
+      "totalHours": 157.8,
       "firstCheckIn": "2024-12-02"
     },
     {
       "name": "仲尾樹央",
-      "monthlyVisits": 7.3,
-      "monthlyHours": 23.4,
+      "monthlyVisits": 7.5,
+      "monthlyHours": 21.3,
       "activeMonths": 7,
-      "totalVisits": 44,
-      "totalHours": 140.6,
+      "totalVisits": 45,
+      "totalHours": 128,
       "firstCheckIn": "2024-12-06"
     },
     {
       "name": "ギャレットコール",
-      "monthlyVisits": 7,
-      "monthlyHours": 17.3,
-      "activeMonths": 6,
-      "totalVisits": 42,
-      "totalHours": 104,
+      "monthlyVisits": 7.3,
+      "monthlyHours": 17,
+      "activeMonths": 7,
+      "totalVisits": 44,
+      "totalHours": 101.9,
       "firstCheckIn": "2025-01-29"
     },
     {
       "name": "浅田香代子",
       "monthlyVisits": 6.5,
-      "monthlyHours": 11.8,
+      "monthlyHours": 12.5,
       "activeMonths": 6,
       "totalVisits": 39,
-      "totalHours": 70.7,
+      "totalHours": 74.8,
       "firstCheckIn": "2025-01-10"
     },
     {
       "name": "市川詩奈",
-      "monthlyVisits": 6.2,
-      "monthlyHours": 8.2,
-      "activeMonths": 7,
-      "totalVisits": 37,
-      "totalHours": 48.9,
+      "monthlyVisits": 6,
+      "monthlyHours": 7.3,
+      "activeMonths": 6,
+      "totalVisits": 36,
+      "totalHours": 44,
       "firstCheckIn": "2025-01-01"
     },
     {
-      "name": "中川めぐみ",
-      "monthlyVisits": 6.2,
-      "monthlyHours": 22.4,
-      "activeMonths": 4,
-      "totalVisits": 37,
-      "totalHours": 134.2,
-      "firstCheckIn": "2025-05-21"
-    },
-    {
       "name": "上岡洋一郎",
-      "monthlyVisits": 5.7,
-      "monthlyHours": 11.8,
+      "monthlyVisits": 5.3,
+      "monthlyHours": 9.5,
       "activeMonths": 6,
-      "totalVisits": 34,
-      "totalHours": 70.6,
+      "totalVisits": 32,
+      "totalHours": 57.1,
       "firstCheckIn": "2024-07-09"
     },
     {
       "name": "藤原亜也子",
-      "monthlyVisits": 5.2,
-      "monthlyHours": 11.4,
-      "activeMonths": 6,
-      "totalVisits": 31,
-      "totalHours": 68.3,
+      "monthlyVisits": 4.7,
+      "monthlyHours": 9.7,
+      "activeMonths": 7,
+      "totalVisits": 28,
+      "totalHours": 58.3,
       "firstCheckIn": "2024-10-17"
     },
     {
-      "name": "石原久佳",
-      "monthlyVisits": 4.7,
-      "monthlyHours": 12.3,
+      "name": "三浦なつき",
+      "monthlyVisits": 4.5,
+      "monthlyHours": 12.5,
       "activeMonths": 6,
-      "totalVisits": 28,
-      "totalHours": 73.8,
-      "firstCheckIn": "2025-01-07"
+      "totalVisits": 27,
+      "totalHours": 74.9,
+      "firstCheckIn": "2025-03-09"
     },
     {
       "name": "高木早弥奈",
-      "monthlyVisits": 4.5,
-      "monthlyHours": 15.3,
-      "activeMonths": 6,
-      "totalVisits": 27,
-      "totalHours": 92.1,
+      "monthlyVisits": 4.2,
+      "monthlyHours": 13.1,
+      "activeMonths": 7,
+      "totalVisits": 25,
+      "totalHours": 78.7,
       "firstCheckIn": "2024-12-18"
+    },
+    {
+      "name": "石原久佳",
+      "monthlyVisits": 3.8,
+      "monthlyHours": 9.8,
+      "activeMonths": 6,
+      "totalVisits": 23,
+      "totalHours": 59.1,
+      "firstCheckIn": "2025-01-07"
+    },
+    {
+      "name": "菊地伸也",
+      "monthlyVisits": 3.7,
+      "monthlyHours": 5.3,
+      "activeMonths": 5,
+      "totalVisits": 22,
+      "totalHours": 32,
+      "firstCheckIn": "2025-04-10"
+    },
+    {
+      "name": "黒田貴彦",
+      "monthlyVisits": 3.7,
+      "monthlyHours": 12.7,
+      "activeMonths": 4,
+      "totalVisits": 22,
+      "totalHours": 76.2,
+      "firstCheckIn": "2025-05-02"
     },
     {
       "name": "土屋咲花",
       "monthlyVisits": 3.5,
       "monthlyHours": 6.4,
-      "activeMonths": 6,
+      "activeMonths": 7,
       "totalVisits": 21,
-      "totalHours": 38.3,
+      "totalHours": 38.4,
       "firstCheckIn": "2024-12-11"
     },
     {
-      "name": "黒田貴彦",
+      "name": "木村 俊平",
       "monthlyVisits": 3.5,
-      "monthlyHours": 11.8,
-      "activeMonths": 3,
+      "monthlyHours": 7.3,
+      "activeMonths": 5,
       "totalVisits": 21,
-      "totalHours": 71,
-      "firstCheckIn": "2025-05-02"
+      "totalHours": 43.7,
+      "firstCheckIn": "2025-04-09"
+    },
+    {
+      "name": "堀越春香",
+      "monthlyVisits": 3.3,
+      "monthlyHours": 5.5,
+      "activeMonths": 7,
+      "totalVisits": 20,
+      "totalHours": 33.2,
+      "firstCheckIn": "2024-10-20"
+    },
+    {
+      "name": "髙濵陽子",
+      "monthlyVisits": 3.3,
+      "monthlyHours": 7.5,
+      "activeMonths": 7,
+      "totalVisits": 20,
+      "totalHours": 44.9,
+      "firstCheckIn": "2025-01-13"
     },
     {
       "name": "西山　誠",
-      "monthlyVisits": 3.3,
-      "monthlyHours": 9.5,
+      "monthlyVisits": 3.2,
+      "monthlyHours": 9.6,
       "activeMonths": 6,
-      "totalVisits": 20,
-      "totalHours": 56.8,
+      "totalVisits": 19,
+      "totalHours": 57.3,
       "firstCheckIn": "2024-12-02"
     },
     {
-      "name": "三浦なつき",
-      "monthlyVisits": 3.3,
-      "monthlyHours": 12.2,
-      "activeMonths": 6,
-      "totalVisits": 20,
-      "totalHours": 73,
-      "firstCheckIn": "2025-03-09"
-    },
-    {
-      "name": "菊地伸也",
-      "monthlyVisits": 3.3,
-      "monthlyHours": 5.1,
-      "activeMonths": 4,
-      "totalVisits": 20,
-      "totalHours": 30.4,
-      "firstCheckIn": "2025-04-10"
-    },
-    {
-      "name": "木村 俊平",
+      "name": "谷口優美",
       "monthlyVisits": 3.2,
-      "monthlyHours": 6.6,
-      "activeMonths": 4,
+      "monthlyHours": 3.9,
+      "activeMonths": 3,
       "totalVisits": 19,
-      "totalHours": 39.8,
-      "firstCheckIn": "2025-04-09"
+      "totalHours": 23.2,
+      "firstCheckIn": "2025-06-09"
     },
     {
       "name": "日髙　博志",
@@ -168,98 +195,80 @@
       "monthlyHours": 8.7,
       "activeMonths": 7,
       "totalVisits": 18,
-      "totalHours": 52.1,
+      "totalHours": 52,
       "firstCheckIn": "2024-10-23"
-    },
-    {
-      "name": "堀越春香",
-      "monthlyVisits": 3,
-      "monthlyHours": 5.2,
-      "activeMonths": 6,
-      "totalVisits": 18,
-      "totalHours": 31.3,
-      "firstCheckIn": "2024-10-20"
     },
     {
       "name": "野村佳申",
       "monthlyVisits": 2.8,
-      "monthlyHours": 17.3,
-      "activeMonths": 6,
+      "monthlyHours": 16.6,
+      "activeMonths": 7,
       "totalVisits": 17,
-      "totalHours": 104,
+      "totalHours": 99.8,
       "firstCheckIn": "2025-02-12"
     },
     {
-      "name": "矢田彩乃",
+      "name": "内田早苗",
       "monthlyVisits": 2.8,
-      "monthlyHours": 3.8,
-      "activeMonths": 6,
+      "monthlyHours": 2.7,
+      "activeMonths": 3,
       "totalVisits": 17,
-      "totalHours": 23.1,
+      "totalHours": 16.5,
+      "firstCheckIn": "2025-06-13"
+    },
+    {
+      "name": "矢田彩乃",
+      "monthlyVisits": 2.7,
+      "monthlyHours": 3.9,
+      "activeMonths": 7,
+      "totalVisits": 16,
+      "totalHours": 23.5,
       "firstCheckIn": "2025-01-29"
     },
     {
       "name": "山崎奈々絵",
-      "monthlyVisits": 2.8,
-      "monthlyHours": 4.9,
+      "monthlyVisits": 2.7,
+      "monthlyHours": 4.8,
       "activeMonths": 4,
-      "totalVisits": 17,
-      "totalHours": 29.4,
+      "totalVisits": 16,
+      "totalHours": 29,
       "firstCheckIn": "2024-11-23"
     },
     {
-      "name": "谷口優美",
-      "monthlyVisits": 2.7,
-      "monthlyHours": 3.3,
-      "activeMonths": 3,
-      "totalVisits": 16,
-      "totalHours": 20,
-      "firstCheckIn": "2025-06-09"
-    },
-    {
-      "name": "髙濵陽子",
-      "monthlyVisits": 2.5,
-      "monthlyHours": 4.3,
-      "activeMonths": 7,
-      "totalVisits": 15,
-      "totalHours": 25.5,
-      "firstCheckIn": "2025-01-13"
-    },
-    {
-      "name": "内田早苗",
-      "monthlyVisits": 2.5,
-      "monthlyHours": 2.6,
-      "activeMonths": 3,
-      "totalVisits": 15,
-      "totalHours": 15.6,
-      "firstCheckIn": "2025-06-13"
-    },
-    {
-      "name": "飯島詩",
-      "monthlyVisits": 2.3,
-      "monthlyHours": 4.4,
-      "activeMonths": 5,
-      "totalVisits": 14,
-      "totalHours": 26.3,
-      "firstCheckIn": "2024-11-17"
-    },
-    {
       "name": "小松剛",
-      "monthlyVisits": 2.3,
-      "monthlyHours": 2.6,
-      "activeMonths": 3,
-      "totalVisits": 14,
-      "totalHours": 15.4,
+      "monthlyVisits": 2.5,
+      "monthlyHours": 2.7,
+      "activeMonths": 4,
+      "totalVisits": 15,
+      "totalHours": 16,
       "firstCheckIn": "2025-05-15"
     },
     {
-      "name": "筒井かづき",
+      "name": "飯島詩",
       "monthlyVisits": 2.2,
-      "monthlyHours": 6.1,
+      "monthlyHours": 3.5,
       "activeMonths": 5,
       "totalVisits": 13,
-      "totalHours": 36.4,
-      "firstCheckIn": "2025-02-16"
+      "totalHours": 21.2,
+      "firstCheckIn": "2024-11-17"
+    },
+    {
+      "name": "高山道亘",
+      "monthlyVisits": 2,
+      "monthlyHours": 3.9,
+      "activeMonths": 5,
+      "totalVisits": 12,
+      "totalHours": 23.2,
+      "firstCheckIn": "2025-03-17"
+    },
+    {
+      "name": "小仁聡",
+      "monthlyVisits": 2,
+      "monthlyHours": 3.7,
+      "activeMonths": 6,
+      "totalVisits": 12,
+      "totalHours": 22.1,
+      "firstCheckIn": "2025-03-18"
     },
     {
       "name": "中村陽子",
@@ -271,94 +280,76 @@
       "firstCheckIn": "2025-04-09"
     },
     {
-      "name": "橋本ゆり香",
-      "monthlyVisits": 1.8,
-      "monthlyHours": 5.2,
-      "activeMonths": 4,
-      "totalVisits": 11,
-      "totalHours": 31.4,
-      "firstCheckIn": "2025-02-12"
-    },
-    {
-      "name": "高山道亘",
-      "monthlyVisits": 1.8,
-      "monthlyHours": 3.4,
-      "activeMonths": 4,
-      "totalVisits": 11,
-      "totalHours": 20.2,
-      "firstCheckIn": "2025-03-17"
-    },
-    {
-      "name": "小仁聡",
-      "monthlyVisits": 1.8,
-      "monthlyHours": 3.4,
-      "activeMonths": 5,
-      "totalVisits": 11,
-      "totalHours": 20.2,
-      "firstCheckIn": "2025-03-18"
-    },
-    {
-      "name": "中尾和貴",
-      "monthlyVisits": 1.7,
-      "monthlyHours": 3.3,
-      "activeMonths": 4,
-      "totalVisits": 10,
-      "totalHours": 19.8,
-      "firstCheckIn": "2025-03-01"
-    },
-    {
       "name": "川田智子",
-      "monthlyVisits": 1.7,
-      "monthlyHours": 2.2,
-      "activeMonths": 3,
-      "totalVisits": 10,
-      "totalHours": 13,
+      "monthlyVisits": 2,
+      "monthlyHours": 2.7,
+      "activeMonths": 4,
+      "totalVisits": 12,
+      "totalHours": 16.1,
       "firstCheckIn": "2025-04-21"
     },
     {
+      "name": "筒井かづき",
+      "monthlyVisits": 1.8,
+      "monthlyHours": 5.2,
+      "activeMonths": 5,
+      "totalVisits": 11,
+      "totalHours": 31.1,
+      "firstCheckIn": "2025-02-16"
+    },
+    {
+      "name": "中尾和貴",
+      "monthlyVisits": 1.8,
+      "monthlyHours": 7,
+      "activeMonths": 4,
+      "totalVisits": 11,
+      "totalHours": 42,
+      "firstCheckIn": "2025-03-01"
+    },
+    {
       "name": "田儀明菜",
-      "monthlyVisits": 1.7,
-      "monthlyHours": 2.8,
+      "monthlyVisits": 1.8,
+      "monthlyHours": 3.5,
       "activeMonths": 2,
-      "totalVisits": 10,
-      "totalHours": 17.1,
+      "totalVisits": 11,
+      "totalHours": 20.8,
       "firstCheckIn": "2025-07-11"
     },
     {
-      "name": "宍戸幹央",
-      "monthlyVisits": 1.5,
-      "monthlyHours": 2,
-      "activeMonths": 6,
-      "totalVisits": 9,
-      "totalHours": 12,
-      "firstCheckIn": "2024-12-11"
-    },
-    {
-      "name": "徳野陽香",
-      "monthlyVisits": 1.5,
-      "monthlyHours": 2.3,
-      "activeMonths": 3,
-      "totalVisits": 9,
-      "totalHours": 14,
-      "firstCheckIn": "2025-01-21"
-    },
-    {
       "name": "稲見玲那",
-      "monthlyVisits": 1.5,
-      "monthlyHours": 4.4,
+      "monthlyVisits": 1.7,
+      "monthlyHours": 4.8,
       "activeMonths": 2,
-      "totalVisits": 9,
-      "totalHours": 26.4,
+      "totalVisits": 10,
+      "totalHours": 29,
       "firstCheckIn": "2025-06-04"
     },
     {
-      "name": "村上直子",
+      "name": "橋本ゆり香",
+      "monthlyVisits": 1.5,
+      "monthlyHours": 4.3,
+      "activeMonths": 4,
+      "totalVisits": 9,
+      "totalHours": 26.1,
+      "firstCheckIn": "2025-02-12"
+    },
+    {
+      "name": "永田拓人",
       "monthlyVisits": 1.3,
-      "monthlyHours": 2.9,
+      "monthlyHours": 2.8,
+      "activeMonths": 4,
+      "totalVisits": 8,
+      "totalHours": 17.1,
+      "firstCheckIn": "2025-02-02"
+    },
+    {
+      "name": "加藤萌絵",
+      "monthlyVisits": 1.3,
+      "monthlyHours": 6.5,
       "activeMonths": 3,
       "totalVisits": 8,
-      "totalHours": 17.3,
-      "firstCheckIn": "2024-11-17"
+      "totalHours": 38.8,
+      "firstCheckIn": "2025-06-30"
     },
     {
       "name": "山田和香",
@@ -379,6 +370,15 @@
       "firstCheckIn": "2025-01-12"
     },
     {
+      "name": "宍戸幹央",
+      "monthlyVisits": 1.2,
+      "monthlyHours": 1.5,
+      "activeMonths": 5,
+      "totalVisits": 7,
+      "totalHours": 9.1,
+      "firstCheckIn": "2024-12-11"
+    },
+    {
       "name": "小仁絵美",
       "monthlyVisits": 1.2,
       "monthlyHours": 2.5,
@@ -386,6 +386,15 @@
       "totalVisits": 7,
       "totalHours": 14.9,
       "firstCheckIn": "2025-04-06"
+    },
+    {
+      "name": "山根志保",
+      "monthlyVisits": 1.2,
+      "monthlyHours": 1.1,
+      "activeMonths": 4,
+      "totalVisits": 7,
+      "totalHours": 6.9,
+      "firstCheckIn": "2025-04-11"
     },
     {
       "name": "中村あおい",
@@ -397,6 +406,24 @@
       "firstCheckIn": "2025-05-13"
     },
     {
+      "name": "吉井　真理",
+      "monthlyVisits": 1.2,
+      "monthlyHours": 3.1,
+      "activeMonths": 3,
+      "totalVisits": 7,
+      "totalHours": 18.4,
+      "firstCheckIn": "2025-06-04"
+    },
+    {
+      "name": "池ヶ谷貴徳",
+      "monthlyVisits": 1.2,
+      "monthlyHours": 0.7,
+      "activeMonths": 2,
+      "totalVisits": 7,
+      "totalHours": 4.4,
+      "firstCheckIn": "2025-06-14"
+    },
+    {
       "name": "西原英里",
       "monthlyVisits": 1,
       "monthlyHours": 2.3,
@@ -404,15 +431,6 @@
       "totalVisits": 6,
       "totalHours": 13.8,
       "firstCheckIn": "2025-01-30"
-    },
-    {
-      "name": "山根志保",
-      "monthlyVisits": 1,
-      "monthlyHours": 1,
-      "activeMonths": 4,
-      "totalVisits": 6,
-      "totalHours": 5.8,
-      "firstCheckIn": "2025-04-11"
     },
     {
       "name": "大井ゆき",
@@ -433,22 +451,49 @@
       "firstCheckIn": "2024-11-18"
     },
     {
-      "name": "吉井　真理",
+      "name": "松本尚樹",
       "monthlyVisits": 1,
-      "monthlyHours": 2.9,
-      "activeMonths": 2,
+      "monthlyHours": 1.4,
+      "activeMonths": 4,
       "totalVisits": 6,
-      "totalHours": 17.3,
-      "firstCheckIn": "2025-06-04"
+      "totalHours": 8.5,
+      "firstCheckIn": "2025-05-01"
     },
     {
-      "name": "池ヶ谷貴徳",
+      "name": "谷口文仁",
       "monthlyVisits": 1,
-      "monthlyHours": 0.7,
+      "monthlyHours": 1.4,
       "activeMonths": 2,
       "totalVisits": 6,
-      "totalHours": 4,
-      "firstCheckIn": "2025-06-14"
+      "totalHours": 8.3,
+      "firstCheckIn": "2025-06-13"
+    },
+    {
+      "name": "大川美里",
+      "monthlyVisits": 1,
+      "monthlyHours": 2,
+      "activeMonths": 2,
+      "totalVisits": 6,
+      "totalHours": 12,
+      "firstCheckIn": "2025-07-02"
+    },
+    {
+      "name": "徳野陽香",
+      "monthlyVisits": 0.8,
+      "monthlyHours": 1.1,
+      "activeMonths": 3,
+      "totalVisits": 5,
+      "totalHours": 6.7,
+      "firstCheckIn": "2025-01-21"
+    },
+    {
+      "name": "村上直子",
+      "monthlyVisits": 0.8,
+      "monthlyHours": 1.5,
+      "activeMonths": 2,
+      "totalVisits": 5,
+      "totalHours": 9.3,
+      "firstCheckIn": "2024-11-17"
     },
     {
       "name": "武井隼人",
@@ -505,15 +550,6 @@
       "firstCheckIn": "2025-04-26"
     },
     {
-      "name": "松本尚樹",
-      "monthlyVisits": 0.8,
-      "monthlyHours": 1.3,
-      "activeMonths": 3,
-      "totalVisits": 5,
-      "totalHours": 7.7,
-      "firstCheckIn": "2025-05-01"
-    },
-    {
       "name": "三木康司",
       "monthlyVisits": 0.8,
       "monthlyHours": 1.8,
@@ -541,31 +577,22 @@
       "firstCheckIn": "2025-06-07"
     },
     {
-      "name": "谷口文仁",
+      "name": "原田　昂輝",
       "monthlyVisits": 0.8,
-      "monthlyHours": 1.2,
-      "activeMonths": 2,
-      "totalVisits": 5,
-      "totalHours": 7,
-      "firstCheckIn": "2025-06-13"
-    },
-    {
-      "name": "加藤萌絵",
-      "monthlyVisits": 0.8,
-      "monthlyHours": 3.9,
-      "activeMonths": 2,
-      "totalVisits": 5,
-      "totalHours": 23.6,
-      "firstCheckIn": "2025-06-30"
-    },
-    {
-      "name": "高浜 拓",
-      "monthlyVisits": 0.8,
-      "monthlyHours": 2.5,
+      "monthlyHours": 1.4,
       "activeMonths": 1,
       "totalVisits": 5,
-      "totalHours": 15.1,
-      "firstCheckIn": "2024-07-01"
+      "totalHours": 8.6,
+      "firstCheckIn": "2025-08-01"
+    },
+    {
+      "name": "渡邉　勘",
+      "monthlyVisits": 0.8,
+      "monthlyHours": 0.6,
+      "activeMonths": 1,
+      "totalVisits": 5,
+      "totalHours": 3.6,
+      "firstCheckIn": "2025-08-04"
     },
     {
       "name": "梅田奈緒",
@@ -595,15 +622,6 @@
       "firstCheckIn": "2024-12-01"
     },
     {
-      "name": "永田拓人",
-      "monthlyVisits": 0.7,
-      "monthlyHours": 1.8,
-      "activeMonths": 3,
-      "totalVisits": 4,
-      "totalHours": 10.8,
-      "firstCheckIn": "2025-02-02"
-    },
-    {
       "name": "柳澤千恵子",
       "monthlyVisits": 0.7,
       "monthlyHours": 0.8,
@@ -622,49 +640,13 @@
       "firstCheckIn": "2025-05-28"
     },
     {
-      "name": "大川美里",
+      "name": "廣川克也",
       "monthlyVisits": 0.7,
-      "monthlyHours": 1.3,
-      "activeMonths": 1,
+      "monthlyHours": 0.7,
+      "activeMonths": 3,
       "totalVisits": 4,
-      "totalHours": 7.9,
-      "firstCheckIn": "2025-07-02"
-    },
-    {
-      "name": "井植浩之",
-      "monthlyVisits": 0.5,
-      "monthlyHours": 0.6,
-      "activeMonths": 3,
-      "totalVisits": 3,
-      "totalHours": 3.8,
-      "firstCheckIn": "2025-02-04"
-    },
-    {
-      "name": "稲田富之",
-      "monthlyVisits": 0.5,
-      "monthlyHours": 0.8,
-      "activeMonths": 3,
-      "totalVisits": 3,
-      "totalHours": 5,
-      "firstCheckIn": "2025-02-08"
-    },
-    {
-      "name": "島峯あけみ",
-      "monthlyVisits": 0.5,
-      "monthlyHours": 1.2,
-      "activeMonths": 1,
-      "totalVisits": 3,
-      "totalHours": 7.3,
-      "firstCheckIn": "2024-10-16"
-    },
-    {
-      "name": "会津亜紀",
-      "monthlyVisits": 0.5,
-      "monthlyHours": 1.5,
-      "activeMonths": 2,
-      "totalVisits": 3,
-      "totalHours": 8.7,
-      "firstCheckIn": "2025-02-17"
+      "totalHours": 4.1,
+      "firstCheckIn": "2025-06-24"
     },
     {
       "name": "菅原　展子",
@@ -721,6 +703,15 @@
       "firstCheckIn": "2025-05-14"
     },
     {
+      "name": "増山理人",
+      "monthlyVisits": 0.5,
+      "monthlyHours": 1.4,
+      "activeMonths": 3,
+      "totalVisits": 3,
+      "totalHours": 8.2,
+      "firstCheckIn": "2025-05-27"
+    },
+    {
       "name": "稲田樹莉亜",
       "monthlyVisits": 0.5,
       "monthlyHours": 1.1,
@@ -728,6 +719,24 @@
       "totalVisits": 3,
       "totalHours": 6.6,
       "firstCheckIn": "2025-07-02"
+    },
+    {
+      "name": "高浜 拓",
+      "monthlyVisits": 0.5,
+      "monthlyHours": 0,
+      "activeMonths": 1,
+      "totalVisits": 3,
+      "totalHours": 0.1,
+      "firstCheckIn": "2024-07-01"
+    },
+    {
+      "name": "松本洋平",
+      "monthlyVisits": 0.5,
+      "monthlyHours": 0.5,
+      "activeMonths": 1,
+      "totalVisits": 3,
+      "totalHours": 3.1,
+      "firstCheckIn": "2025-08-07"
     },
     {
       "name": "鈴木さら",
@@ -739,22 +748,22 @@
       "firstCheckIn": "2025-02-22"
     },
     {
-      "name": "増山理人",
-      "monthlyVisits": 0.3,
-      "monthlyHours": 0.9,
-      "activeMonths": 2,
-      "totalVisits": 2,
-      "totalHours": 5.7,
-      "firstCheckIn": "2025-05-27"
-    },
-    {
-      "name": "廣川克也",
+      "name": "稲田富之",
       "monthlyVisits": 0.3,
       "monthlyHours": 0.6,
       "activeMonths": 2,
       "totalVisits": 2,
       "totalHours": 3.4,
-      "firstCheckIn": "2025-06-24"
+      "firstCheckIn": "2025-02-08"
+    },
+    {
+      "name": "井植浩之",
+      "monthlyVisits": 0.3,
+      "monthlyHours": 0.4,
+      "activeMonths": 2,
+      "totalVisits": 2,
+      "totalHours": 2.7,
+      "firstCheckIn": "2025-02-04"
     },
     {
       "name": "大田直人",
@@ -766,22 +775,31 @@
       "firstCheckIn": "2024-10-09"
     },
     {
-      "name": "原田　昂輝",
+      "name": "中野　雄一",
       "monthlyVisits": 0.3,
-      "monthlyHours": 0.4,
+      "monthlyHours": 1.2,
       "activeMonths": 1,
       "totalVisits": 2,
-      "totalHours": 2.2,
-      "firstCheckIn": "2025-08-01"
+      "totalHours": 7.4,
+      "firstCheckIn": "2025-08-09"
     },
     {
-      "name": "谷本 太一",
+      "name": "三輪郁美",
+      "monthlyVisits": 0.3,
+      "monthlyHours": 0.2,
+      "activeMonths": 1,
+      "totalVisits": 2,
+      "totalHours": 1.2,
+      "firstCheckIn": "2025-08-11"
+    },
+    {
+      "name": "島峯あけみ",
       "monthlyVisits": 0.2,
-      "monthlyHours": 0.1,
+      "monthlyHours": 0.4,
       "activeMonths": 1,
       "totalVisits": 1,
-      "totalHours": 0.8,
-      "firstCheckIn": "2025-01-12"
+      "totalHours": 2.6,
+      "firstCheckIn": "2024-10-16"
     },
     {
       "name": "永正和也",
@@ -800,6 +818,15 @@
       "totalVisits": 1,
       "totalHours": 1,
       "firstCheckIn": "2025-04-02"
+    },
+    {
+      "name": "会津亜紀",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0.6,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 3.3,
+      "firstCheckIn": "2025-02-17"
     },
     {
       "name": "田中裕美",
@@ -865,6 +892,15 @@
       "firstCheckIn": "2025-06-25"
     },
     {
+      "name": "柳沼愛子",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0.4,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 2.4,
+      "firstCheckIn": "2025-06-29"
+    },
+    {
       "name": "李　軍",
       "monthlyVisits": 0.2,
       "monthlyHours": 0.1,
@@ -881,15 +917,6 @@
       "totalVisits": 1,
       "totalHours": 0.3,
       "firstCheckIn": "2025-01-09"
-    },
-    {
-      "name": "山本美瞳",
-      "monthlyVisits": 0.2,
-      "monthlyHours": 0.4,
-      "activeMonths": 1,
-      "totalVisits": 1,
-      "totalHours": 2.5,
-      "firstCheckIn": "2025-07-09"
     },
     {
       "name": "石坂るり子",
@@ -917,16 +944,97 @@
       "totalVisits": 1,
       "totalHours": 1,
       "firstCheckIn": "2025-07-31"
+    },
+    {
+      "name": "井本　成昭",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0.6,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 3.7,
+      "firstCheckIn": "2025-08-07"
+    },
+    {
+      "name": "宇井睦人",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0.3,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 1.8,
+      "firstCheckIn": "2025-08-07"
+    },
+    {
+      "name": "梅谷美友",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0.1,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 0.8,
+      "firstCheckIn": "2025-08-07"
+    },
+    {
+      "name": "武内亮太",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0.3,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 2,
+      "firstCheckIn": "2025-08-11"
+    },
+    {
+      "name": "風間　由美子",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 0,
+      "firstCheckIn": "2025-08-13"
+    },
+    {
+      "name": "大谷吉秀",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0.8,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 5,
+      "firstCheckIn": "2025-08-15"
+    },
+    {
+      "name": "山根万桜",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0.2,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 1.1,
+      "firstCheckIn": "2025-08-15"
+    },
+    {
+      "name": "小竹茜",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0.2,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 1.4,
+      "firstCheckIn": "2025-08-18"
+    },
+    {
+      "name": "杉山なおみ",
+      "monthlyVisits": 0.2,
+      "monthlyHours": 0,
+      "activeMonths": 1,
+      "totalVisits": 1,
+      "totalHours": 0.2,
+      "firstCheckIn": "2025-08-19"
     }
   ],
   "oneMonthData": [
     {
       "name": "ギャレットコール",
-      "monthlyVisits": 17,
-      "monthlyHours": 29.7,
+      "monthlyVisits": 18,
+      "monthlyHours": 32.4,
       "activeMonths": 1,
-      "totalVisits": 17,
-      "totalHours": 29.7,
+      "totalVisits": 18,
+      "totalHours": 32.4,
       "firstCheckIn": "2025-01-29"
     },
     {
@@ -949,11 +1057,11 @@
     },
     {
       "name": "山本万優",
-      "monthlyVisits": 13,
-      "monthlyHours": 64.7,
+      "monthlyVisits": 10,
+      "monthlyHours": 44,
       "activeMonths": 1,
-      "totalVisits": 13,
-      "totalHours": 64.7,
+      "totalVisits": 10,
+      "totalHours": 44,
       "firstCheckIn": "2024-12-02"
     },
     {
@@ -966,15 +1074,6 @@
       "firstCheckIn": "2024-07-18"
     },
     {
-      "name": "日髙　博志",
-      "monthlyVisits": 10,
-      "monthlyHours": 19.5,
-      "activeMonths": 1,
-      "totalVisits": 10,
-      "totalHours": 19.5,
-      "firstCheckIn": "2024-10-23"
-    },
-    {
       "name": "仲尾樹央",
       "monthlyVisits": 10,
       "monthlyHours": 23.8,
@@ -985,21 +1084,39 @@
     },
     {
       "name": "木村 俊平",
-      "monthlyVisits": 9,
-      "monthlyHours": 17.8,
+      "monthlyVisits": 8,
+      "monthlyHours": 14.5,
       "activeMonths": 1,
-      "totalVisits": 9,
-      "totalHours": 17.8,
+      "totalVisits": 8,
+      "totalHours": 14.5,
       "firstCheckIn": "2025-04-09"
     },
     {
-      "name": "田儀明菜",
-      "monthlyVisits": 8,
-      "monthlyHours": 13.1,
+      "name": "日髙　博志",
+      "monthlyVisits": 7,
+      "monthlyHours": 17,
       "activeMonths": 1,
-      "totalVisits": 8,
-      "totalHours": 13.1,
+      "totalVisits": 7,
+      "totalHours": 17,
+      "firstCheckIn": "2024-10-23"
+    },
+    {
+      "name": "田儀明菜",
+      "monthlyVisits": 7,
+      "monthlyHours": 12.6,
+      "activeMonths": 1,
+      "totalVisits": 7,
+      "totalHours": 12.6,
       "firstCheckIn": "2025-07-11"
+    },
+    {
+      "name": "谷口優美",
+      "monthlyVisits": 6,
+      "monthlyHours": 7.4,
+      "activeMonths": 1,
+      "totalVisits": 6,
+      "totalHours": 7.4,
+      "firstCheckIn": "2025-06-09"
     },
     {
       "name": "市川詩奈",
@@ -1013,10 +1130,10 @@
     {
       "name": "菊地伸也",
       "monthlyVisits": 5,
-      "monthlyHours": 8.6,
+      "monthlyHours": 7.6,
       "activeMonths": 1,
       "totalVisits": 5,
-      "totalHours": 8.6,
+      "totalHours": 7.6,
       "firstCheckIn": "2025-04-10"
     },
     {
@@ -1029,22 +1146,13 @@
       "firstCheckIn": "2025-06-13"
     },
     {
-      "name": "谷口優美",
+      "name": "稲見玲那",
       "monthlyVisits": 5,
-      "monthlyHours": 5.8,
+      "monthlyHours": 13.9,
       "activeMonths": 1,
       "totalVisits": 5,
-      "totalHours": 5.8,
-      "firstCheckIn": "2025-06-09"
-    },
-    {
-      "name": "高浜 拓",
-      "monthlyVisits": 5,
-      "monthlyHours": 15.1,
-      "activeMonths": 1,
-      "totalVisits": 5,
-      "totalHours": 15.1,
-      "firstCheckIn": "2024-07-01"
+      "totalHours": 13.9,
+      "firstCheckIn": "2025-06-04"
     },
     {
       "name": "加藤萌絵",
@@ -1085,10 +1193,10 @@
     {
       "name": "石原久佳",
       "monthlyVisits": 4,
-      "monthlyHours": 11.6,
+      "monthlyHours": 7.9,
       "activeMonths": 1,
       "totalVisits": 4,
-      "totalHours": 11.6,
+      "totalHours": 7.9,
       "firstCheckIn": "2025-01-07"
     },
     {
@@ -1110,15 +1218,6 @@
       "firstCheckIn": "2024-07-09"
     },
     {
-      "name": "稲見玲那",
-      "monthlyVisits": 4,
-      "monthlyHours": 11.2,
-      "activeMonths": 1,
-      "totalVisits": 4,
-      "totalHours": 11.2,
-      "firstCheckIn": "2025-06-04"
-    },
-    {
       "name": "野村佳申",
       "monthlyVisits": 3,
       "monthlyHours": 13.1,
@@ -1130,10 +1229,10 @@
     {
       "name": "吉井　真理",
       "monthlyVisits": 3,
-      "monthlyHours": 11.3,
+      "monthlyHours": 8.4,
       "activeMonths": 1,
       "totalVisits": 3,
-      "totalHours": 11.3,
+      "totalHours": 8.4,
       "firstCheckIn": "2025-06-04"
     },
     {
@@ -1144,6 +1243,15 @@
       "totalVisits": 3,
       "totalHours": 8.4,
       "firstCheckIn": "2025-05-02"
+    },
+    {
+      "name": "高浜 拓",
+      "monthlyVisits": 3,
+      "monthlyHours": 0.1,
+      "activeMonths": 1,
+      "totalVisits": 3,
+      "totalHours": 0.1,
+      "firstCheckIn": "2024-07-01"
     },
     {
       "name": "小松剛",
@@ -1180,6 +1288,15 @@
       "totalVisits": 3,
       "totalHours": 4.2,
       "firstCheckIn": "2025-06-13"
+    },
+    {
+      "name": "三浦なつき",
+      "monthlyVisits": 3,
+      "monthlyHours": 10.2,
+      "activeMonths": 1,
+      "totalVisits": 3,
+      "totalHours": 10.2,
+      "firstCheckIn": "2025-03-09"
     },
     {
       "name": "とまそん",
@@ -1272,15 +1389,6 @@
       "firstCheckIn": "2025-01-10"
     },
     {
-      "name": "三浦なつき",
-      "monthlyVisits": 2,
-      "monthlyHours": 19,
-      "activeMonths": 1,
-      "totalVisits": 2,
-      "totalHours": 19,
-      "firstCheckIn": "2025-03-09"
-    },
-    {
       "name": "高木早弥奈",
       "monthlyVisits": 2,
       "monthlyHours": 7,
@@ -1306,15 +1414,6 @@
       "totalVisits": 1,
       "totalHours": 0.3,
       "firstCheckIn": "2025-01-09"
-    },
-    {
-      "name": "山本美瞳",
-      "monthlyVisits": 1,
-      "monthlyHours": 2.5,
-      "activeMonths": 1,
-      "totalVisits": 1,
-      "totalHours": 2.5,
-      "firstCheckIn": "2025-07-09"
     },
     {
       "name": "松本尚樹",
@@ -1435,9 +1534,9 @@
     }
   ],
   "metadata": {
-    "totalRecords": 1404,
+    "totalRecords": 1535,
     "uniqueUsers": 0,
-    "generatedAt": "2025-08-04T01:25:53.612Z",
+    "generatedAt": "2025-08-19T05:07:22.844Z",
     "periodSixMonths": "直近6ヶ月",
     "periodOneMonth": "2025年7月のみ"
   }
